@@ -14,8 +14,8 @@ This template provides a structured starting point for documenting hardware modu
 </div>
 
 <div align="center">
-  <img src="hardware/resources/board_image.png" width="450px" alt="Product Image">
-  <p><em>[Insert product name or logo]</em></p>
+  <img src="./hardware/resources/unit_top_v_1_0_ue0085_TCAN1051HVD.png" width="450px" alt="Product Image">
+  <p><em>TCAN1051HVD</em></p>
 </div>
 
 ## Resources
