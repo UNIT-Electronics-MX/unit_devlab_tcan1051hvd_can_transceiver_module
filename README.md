@@ -1,7 +1,7 @@
 
 # DevLab: TCAN1051HVD CAN Transceiver Module
 
-## Overview
+## Introduction
 
 The TCAN1051HVD is a high-speed CAN transceiver designed for automotive and industrial applications. It provides a robust interface between a CAN controller and the physical CAN bus, ensuring reliable data transmission in harsh environments. This module is ideal for use in electric vehicles, industrial automation, and other applications requiring reliable CAN communication.
 
@@ -17,6 +17,19 @@ The TCAN1051HVD is a high-speed CAN transceiver designed for automotive and indu
   <img src="./hardware/resources/unit_top_v_1_0_ue0085_TCAN1051HVD.png" width="450px" alt="Product Image">
   <p><em>TCAN1051HVD</em></p>
 </div>
+
+
+### Quick Setup
+
+
+[<img src="https://img.shields.io/badge/Product%20Wiki-blue?style=for-the-badge" alt="Product Wiki" target="_blank">](https://unit-electronics-mx.github.io/unit_bme688_environmental_sensor_4_in_1/mdbook/index.html)
+[<img src="https://img.shields.io/badge/Datasheet-green?style=for-the-badge" alt="Datasheet" target="_blank">](https://unit-electronics-mx.github.io/unit_bme688_environmental_sensor_4_in_1/datasheet_professional.html)
+[<img src="https://img.shields.io/badge/Buy%20Now-orange?style=for-the-badge" alt="Buy Now" target="_blank">](https://uelectronics.com/)
+[<img src="https://img.shields.io/badge/Getting%20Started-purple?style=for-the-badge" alt="Getting Started" target="_blank">](https://unit-electronics-mx.github.io/unit_bme688_environmental_sensor_4_in_1/mdbook/software/getting-started.html)
+
+</div>
+
+## Overview
 
 | Feature / Component              | Detailed Description                                                                                                                     |
 | -------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
