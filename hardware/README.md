@@ -2,7 +2,7 @@
 
 <a href="./unit_schematic_v_1_0_ue0085_TCAN1051HVD.pdf"><img src="./resources/Schematics_icon.jpg" width="500px"><br/> Schematics</a>
 
-## 🔌 Pinout
+## Pinout
 
 <div align="center">
     <a href="#"><img src="resources/unit_pinout_v_0_0_1_ue0094_icp10111_barometric_pressure_sensor_en.jpg" width="500px"><br/>Pinout</a>
@@ -18,13 +18,13 @@
 
 </div>
 
-## 📏 Dimensions
+## Dimensions
 
 <div align="center">
 <a href="./resources/unit_dimensions_v_1_0_ue0085_TCAN1051HVD.png"><img src="./resources/unit_dimensions_v_1_0_ue0085_TCAN1051HVD.png" width="500px"><br/> Dimensions</a>
 </div>
 
-## 📃 Topology
+## Topology
 
 <div align="center">
 

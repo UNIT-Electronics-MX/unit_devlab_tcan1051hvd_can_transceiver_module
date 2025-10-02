@@ -1,9 +1,9 @@
 
-# Product Information
+# DevLab: TCAN1051HVD CAN Transceiver Module
 
 ## Overview
 
-This template provides a structured starting point for documenting hardware modules or products. It includes sections for product overview, features, typical use cases, resources, and documentation links. Customize each section to match your specific product details, ensuring clear and consistent information for users and developers.
+The TCAN1051HVD is a high-speed CAN transceiver designed for automotive and industrial applications. It provides a robust interface between a CAN controller and the physical CAN bus, ensuring reliable data transmission in harsh environments. This module is ideal for use in electric vehicles, industrial automation, and other applications requiring reliable CAN communication.
 
 <div align="center">
   <a href="#"><img src="https://img.shields.io/badge/version-1.0-blue.svg" alt="Version"></a>
@@ -18,41 +18,27 @@ This template provides a structured starting point for documenting hardware modu
   <p><em>TCAN1051HVD</em></p>
 </div>
 
-## Resources
-
-| Resource | Link |
-|:--------:|:----:|
-| FT24C32A Datasheet | [Link](../../docs/) |
-
-## Features
-
-- 32Kbit FT24C32A I2C EEPROM for dependable non-volatile memory storage
-- Standard I2C (2-wire) interface for straightforward system integration
-- Broad operating voltage: 1.8V to 5.5V for flexible power compatibility
-- Supports fast I2C communication up to 400 kHz
-
-## Typical Applications
-
-| Application              | Description                                         |
-|--------------------------|-----------------------------------------------------|
-| Data logging             | Store sensor data, logs, or event histories         |
-| Configuration retention  | Preserve device settings or calibration data        |
-| Embedded memory          | Add persistent storage to microcontroller projects  |
+| Feature / Component              | Detailed Description                                                                                                                     |
+| -------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| **Communication**                | Integrated **high-speed CAN (Controller Area Network) interface**, ensuring robust and reliable data transfer in demanding environments. |
+| **Operating Voltage**            | Supports both **3.3V and 5V logic levels**, making it adaptable to a wide range of microcontrollers and external systems.                |
+| **Input Port**                   | **JST 1.0 mm 4-pin connector** providing a compact and secure interface for supplying power and CAN signals.                             |
+| **IC1 – TCAN1051HVD**            | Automotive-grade **CAN transceiver IC**, designed for high noise immunity, ESD protection, and reliable long-distance communication.     |
+| **IC2 – AP2112K**                | **3.3V low dropout (LDO) regulator**, delivering a clean and stable voltage supply to sensitive components.                              |
+| **IC3 – TPS61023**               | High-efficiency **5V boost converter**, enabling stable power delivery even from lower input voltages.                                   |
+| **L1 – Power LED**               | On-board LED indicator that provides **instant visual feedback of power status**.                                                        |
+| **JP1 / JP2**                    | Dual rows of **2.54 mm castellated holes** (side 1 and 2), allowing flexible mounting, soldering, or integration into custom boards.     |
+| **J1 – CAN Data Port**           | **Dedicated JST 1.0 mm pitch connector** optimized for reliable CAN bus data line interfacing.                                           |
+| **J2 – Screw Terminal**          | Sturdy **terminal block** that allows secure, tool-based connection to the CAN bus wiring.                                               |
+| **SB1 – Logic Voltage Selector** | **Configurable solder bridge** for selecting the appropriate logic voltage (VIO), ensuring compatibility with the host system.           |
 
 
-## Getting Started
+## Applications
 
-1. Connect the module to your system using the I2C interface.
-2. Refer to the documentation for integration with your development environment.
-3. Explore example projects in the `/software/examples` directory.
-
-## Documentation
-
-- [Schematic Diagram](hardware/schematic.pdf)
-- [Board Dimensions (DXF)](docs/dimensions.dxf)
-- [Pinout Diagram](docs/pinout.png)
-- [Firmware Examples](firmware/)
-- [Getting Started Guide](docs/getting_started.md)
+- Automotive systems
+- Robotics
+- Home automation
+- IoT devices
 
 ## License
 
