@@ -18,6 +18,7 @@ The TCAN1051HVD is a high-speed CAN transceiver designed for automotive and indu
   <p><em>TCAN1051HVD</em></p>
 </div>
 
+<div align="center">
 
 ### Quick Setup
 
