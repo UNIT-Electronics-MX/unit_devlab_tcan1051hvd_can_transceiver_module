@@ -15,7 +15,7 @@
 |      Vio      |             I/O Level shifting Voltage             |   2.8   |    -    |   5.5   |    V     |
 |   Ioh(rxd)    |       RXD terminal HIGH level output current       |   -2    |    -    |    -    |    mA    |
 |   Ioh(rxd)    |       RXD terminal LOW level output current        |    -    |    -    |    2    |    mA    |
-|      Icc      |             Transduccer supply current             |    -    |    -    |   180   |    mA    |
+|      Icc      |             Transducer supply current             |    -    |    -    |   180   |    mA    |
 |     I3v3*     |          Maximum current of 3V3 regulator          |    -    |    -    |   600   |    mA    |
 |     I5v**     |          Maximum current of 5V regulator           |    -    |    -    |    1    |    A     |
 |      Iio      | I/O supply current (RXD Floating, TXD= 0 or 5.5 V) |    -    |   90    |   300   |    uA    |
@@ -83,4 +83,4 @@
 
 # References
 
-- [TCAN1051 Datasheet]({{https://www.ti.com/lit/ds/symlink/tcan1051hv.pdf?ts=1762979634497&ref_url=https%253A%252F%252Fwww.ti.com%252Fproduct%252Fes-mx%252FTCAN1051HV%252Fpart-details%252FTCAN1051HVD}})
+- <a href="https://www.ti.com/lit/ds/symlink/tcan1051hv.pdf?ts=1762979634497&ref_url=https%253A%252F%252Fwww.ti.com%252Fproduct%252Fes-mx%252FTCAN1051HV%252Fpart-details%252FTCAN1051HVD">TCAN1051 Datasheet</a>
