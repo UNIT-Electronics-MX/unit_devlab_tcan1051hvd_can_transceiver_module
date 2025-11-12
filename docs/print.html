@@ -225,7 +225,31 @@ See <a href="LICENSE.html"><code>LICENSE.md</code></a> for details.</p>
 <div align="center">
   <sub>Template by UNIT Electronics • Customize this file for your product documentation.</sub>
 </div><div style="break-before: page; page-break-before: always;"></div><h1 id="hardware-overview"><a class="header" href="#hardware-overview">Hardware Overview</a></h1>
+<div align="center">
 <div align="center"><a href="hardware/../resources/unit_schematic_v_1_0_ue0085_TCAN1051HVD.pdf"><img src="hardware/../resources/Schematics_icon.jpg" style="max-width: 500px; height: auto;" alt="Schematics"><br/> Schematics</a></div>
+</div>
+<h2 id="technical-specifications"><a class="header" href="#technical-specifications">Technical Specifications</a></h2>
+<div align="center">
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center"><strong>Parameter</strong></th><th style="text-align: center"><strong>Description</strong></th><th style="text-align: center"><strong>Min</strong></th><th style="text-align: center"><strong>Typ</strong></th><th style="text-align: center"><strong>Max</strong></th><th style="text-align: center"><strong>Unit</strong></th></tr></thead><tbody>
+<tr><td style="text-align: center">Vcc</td><td style="text-align: center">Input voltage to power on the module</td><td style="text-align: center">3.3</td><td style="text-align: center">-</td><td style="text-align: center">5</td><td style="text-align: center">V</td></tr>
+<tr><td style="text-align: center">Vio</td><td style="text-align: center">I/O Level shifting Voltage</td><td style="text-align: center">2.8</td><td style="text-align: center">-</td><td style="text-align: center">5.5</td><td style="text-align: center">V</td></tr>
+<tr><td style="text-align: center">Ioh(rxd)</td><td style="text-align: center">RXD terminal HIGH level output current</td><td style="text-align: center">-2</td><td style="text-align: center">-</td><td style="text-align: center">-</td><td style="text-align: center">mA</td></tr>
+<tr><td style="text-align: center">Ioh(rxd)</td><td style="text-align: center">RXD terminal LOW level output current</td><td style="text-align: center">-</td><td style="text-align: center">-</td><td style="text-align: center">2</td><td style="text-align: center">mA</td></tr>
+<tr><td style="text-align: center">Icc</td><td style="text-align: center">Transducer supply current</td><td style="text-align: center">-</td><td style="text-align: center">-</td><td style="text-align: center">180</td><td style="text-align: center">mA</td></tr>
+<tr><td style="text-align: center">I3v3*</td><td style="text-align: center">Maximum current of 3V3 regulator</td><td style="text-align: center">-</td><td style="text-align: center">-</td><td style="text-align: center">600</td><td style="text-align: center">mA</td></tr>
+<tr><td style="text-align: center">I5v**</td><td style="text-align: center">Maximum current of 5V regulator</td><td style="text-align: center">-</td><td style="text-align: center">-</td><td style="text-align: center">1</td><td style="text-align: center">A</td></tr>
+<tr><td style="text-align: center">Iio</td><td style="text-align: center">I/O supply current (RXD Floating, TXD= 0 or 5.5 V)</td><td style="text-align: center">-</td><td style="text-align: center">90</td><td style="text-align: center">300</td><td style="text-align: center">uA</td></tr>
+<tr><td style="text-align: center">Vih</td><td style="text-align: center">Input high level voltage</td><td style="text-align: center">0.7xVio</td><td style="text-align: center">-</td><td style="text-align: center">-</td><td style="text-align: center">V</td></tr>
+<tr><td style="text-align: center">Vil</td><td style="text-align: center">Input low level voltage</td><td style="text-align: center">-</td><td style="text-align: center">-</td><td style="text-align: center">0.3xVio</td><td style="text-align: center">V</td></tr>
+<tr><td style="text-align: center">Vol</td><td style="text-align: center">Output low level voltage</td><td style="text-align: center">-</td><td style="text-align: center">-</td><td style="text-align: center">0.2xVio</td><td style="text-align: center">V</td></tr>
+<tr><td style="text-align: center">Voh</td><td style="text-align: center">Output high level voltage</td><td style="text-align: center">0.8xVio</td><td style="text-align: center">-</td><td style="text-align: center">-</td><td style="text-align: center">V</td></tr>
+<tr><td style="text-align: center">Voh(DOM)</td><td style="text-align: center">CANH Bus output voltage (dominant)</td><td style="text-align: center">2.75</td><td style="text-align: center">-</td><td style="text-align: center">4.5</td><td style="text-align: center">V</td></tr>
+<tr><td style="text-align: center">Vol(DOM)</td><td style="text-align: center">CANL Bus output voltage (dominant)</td><td style="text-align: center">0.25</td><td style="text-align: center">-</td><td style="text-align: center">2.25</td><td style="text-align: center">V</td></tr>
+<tr><td style="text-align: center">Vol(REC)</td><td style="text-align: center">CANH and CANL Bus output voltage (recessive)</td><td style="text-align: center">2</td><td style="text-align: center">0.5xVcc</td><td style="text-align: center">3</td><td style="text-align: center">V</td></tr>
+</tbody></table>
+</div></div>
+<p>*Optimal thermal management is required for the regulator to perform reliably at maximum output current.</p>
+<p>**The output current may vary with the input voltage at VIN pin.</p>
 <h2 id="pinout"><a class="header" href="#pinout">Pinout</a></h2>
 <div align="center">
     <div align="center"><a href="hardware/overview.html#"><img src="hardware/../resources/unit_pinout_v_0_0_1_ue0094_icp10111_barometric_pressure_sensor_en.jpg" style="max-width: 500px; height: auto;" alt="Pinout"><br/> Pinout</a></div>
@@ -237,12 +261,7 @@ See <a href="LICENSE.html"><code>LICENSE.md</code></a> for details.</p>
 <tr><td>GND</td><td>Ground</td><td>Common ground for all components</td></tr>
 </tbody></table>
 </div></div>
-<h2 id="dimensions"><a class="header" href="#dimensions">Dimensions</a></h2>
-<div align="center">
-<div align="center"><a href="hardware/../resources/unit_dimensions_v_1_0_ue0085_TCAN1051HVD.png"><img src="hardware/../resources/unit_dimensions_v_1_0_ue0085_TCAN1051HVD.png" style="max-width: 500px; height: auto;" alt="Dimensions"><br/> Dimensions</a></div>
-</div>
 <h2 id="topology"><a class="header" href="#topology">Topology</a></h2>
-<div align="center">
 <div align="center">
 <div align="center"><a href="hardware/../resources/unit_topology_v_1_0_ue0085_TCAN1051HVD.png"><img src="hardware/../resources/unit_topology_v_1_0_ue0085_TCAN1051HVD.png" style="max-width: 500px; height: auto;" alt="Topology"><br/> Topology</a></div>
 <br/>
@@ -260,10 +279,36 @@ See <a href="LICENSE.html"><code>LICENSE.md</code></a> for details.</p>
 <tr><td>SB1</td><td>Solder Bridge for VIO</td></tr>
 </tbody></table>
 </div></div>
+<h2 id="dimensions"><a class="header" href="#dimensions">Dimensions</a></h2>
+<div align="center">
+<div align="center"><a href="hardware/../resources/unit_dimensions_v_1_0_ue0085_TCAN1051HVD.png"><img src="hardware/../resources/unit_dimensions_v_1_0_ue0085_TCAN1051HVD.png" style="max-width: 500px; height: auto;" alt="Dimensions"><br/> Dimensions</a></div>
+</div>
 <h1 id="references"><a class="header" href="#references">References</a></h1>
 <ul>
-<li><a href="hardware/%7B%7Bdatasheet_url%7D%7D">{{datasheet_name}}</a></li>
+<li><a href="https://www.ti.com/lit/ds/symlink/tcan1051hv.pdf?ts=1762979634497&ref_url=https%253A%252F%252Fwww.ti.com%252Fproduct%252Fes-mx%252FTCAN1051HV%252Fpart-details%252FTCAN1051HVD">TCAN1051 Datasheet</a></li>
 </ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="technical-specifications-1"><a class="header" href="#technical-specifications-1">Technical Specifications</a></h1>
+<div align="center">
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center"><strong>Parameter</strong></th><th style="text-align: center"><strong>Description</strong></th><th style="text-align: center"><strong>Min</strong></th><th style="text-align: center"><strong>Typ</strong></th><th style="text-align: center"><strong>Max</strong></th><th style="text-align: center"><strong>Unit</strong></th></tr></thead><tbody>
+<tr><td style="text-align: center">Vcc</td><td style="text-align: center">Input voltage to power on the module</td><td style="text-align: center">3.3</td><td style="text-align: center">-</td><td style="text-align: center">5</td><td style="text-align: center">V</td></tr>
+<tr><td style="text-align: center">Vio</td><td style="text-align: center">I/O Level shifting Voltage</td><td style="text-align: center">2.8</td><td style="text-align: center">-</td><td style="text-align: center">5.5</td><td style="text-align: center">V</td></tr>
+<tr><td style="text-align: center">Ioh(rxd)</td><td style="text-align: center">RXD terminal HIGH level output current</td><td style="text-align: center">-2</td><td style="text-align: center">-</td><td style="text-align: center">-</td><td style="text-align: center">mA</td></tr>
+<tr><td style="text-align: center">Ioh(rxd)</td><td style="text-align: center">RXD terminal LOW level output current</td><td style="text-align: center">-</td><td style="text-align: center">-</td><td style="text-align: center">2</td><td style="text-align: center">mA</td></tr>
+<tr><td style="text-align: center">Icc</td><td style="text-align: center">Transducer supply current</td><td style="text-align: center">-</td><td style="text-align: center">-</td><td style="text-align: center">180</td><td style="text-align: center">mA</td></tr>
+<tr><td style="text-align: center">I3v3*</td><td style="text-align: center">Maximum current of 3V3 regulator</td><td style="text-align: center">-</td><td style="text-align: center">-</td><td style="text-align: center">600</td><td style="text-align: center">mA</td></tr>
+<tr><td style="text-align: center">I5v**</td><td style="text-align: center">Maximum current of 5V regulator</td><td style="text-align: center">-</td><td style="text-align: center">-</td><td style="text-align: center">1</td><td style="text-align: center">A</td></tr>
+<tr><td style="text-align: center">Iio</td><td style="text-align: center">I/O supply current (RXD Floating, TXD= 0 or 5.5 V)</td><td style="text-align: center">-</td><td style="text-align: center">90</td><td style="text-align: center">300</td><td style="text-align: center">uA</td></tr>
+<tr><td style="text-align: center">Vih</td><td style="text-align: center">Input high level voltage</td><td style="text-align: center">0.7xVio</td><td style="text-align: center">-</td><td style="text-align: center">-</td><td style="text-align: center">V</td></tr>
+<tr><td style="text-align: center">Vil</td><td style="text-align: center">Input low level voltage</td><td style="text-align: center">-</td><td style="text-align: center">-</td><td style="text-align: center">0.3xVio</td><td style="text-align: center">V</td></tr>
+<tr><td style="text-align: center">Vol</td><td style="text-align: center">Output low level voltage</td><td style="text-align: center">-</td><td style="text-align: center">-</td><td style="text-align: center">0.2xVio</td><td style="text-align: center">V</td></tr>
+<tr><td style="text-align: center">Voh</td><td style="text-align: center">Output high level voltage</td><td style="text-align: center">0.8xVio</td><td style="text-align: center">-</td><td style="text-align: center">-</td><td style="text-align: center">V</td></tr>
+<tr><td style="text-align: center">Voh(DOM)</td><td style="text-align: center">CANH Bus output voltage (dominant)</td><td style="text-align: center">2.75</td><td style="text-align: center">-</td><td style="text-align: center">4.5</td><td style="text-align: center">V</td></tr>
+<tr><td style="text-align: center">Vol(DOM)</td><td style="text-align: center">CANL Bus output voltage (dominant)</td><td style="text-align: center">0.25</td><td style="text-align: center">-</td><td style="text-align: center">2.25</td><td style="text-align: center">V</td></tr>
+<tr><td style="text-align: center">Vol(REC)</td><td style="text-align: center">CANH and CANL Bus output voltage (recessive)</td><td style="text-align: center">2</td><td style="text-align: center">0.5xVcc</td><td style="text-align: center">3</td><td style="text-align: center">V</td></tr>
+</tbody></table>
+</div></div>
+<p>*Optimal thermal management is required for the regulator to perform reliably at maximum output current.</p>
+<p>**The output current may vary with the input voltage at VIN pin.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="pinout-1"><a class="header" href="#pinout-1">Pinout</a></h1>
 <div align="center">
     <div align="center"><a href="hardware/pinout.html#"><img src="hardware/../resources/unit_pinout_v_0_0_1_ue0094_icp10111_barometric_pressure_sensor_en.jpg" style="max-width: 500px; height: auto;" alt="Pinout"><br/> Pinout</a></div>
@@ -274,11 +319,7 @@ See <a href="LICENSE.html"><code>LICENSE.md</code></a> for details.</p>
 <tr><td>VCC</td><td>Power Supply</td><td>3.3V or 5V</td></tr>
 <tr><td>GND</td><td>Ground</td><td>Common ground for all components</td></tr>
 </tbody></table>
-</div></div><div style="break-before: page; page-break-before: always;"></div><h1 id="dimensions-1"><a class="header" href="#dimensions-1">Dimensions</a></h1>
-<div align="center">
-<div align="center"><a href="hardware/../resources/unit_dimensions_v_1_0_ue0085_TCAN1051HVD.png"><img src="hardware/../resources/unit_dimensions_v_1_0_ue0085_TCAN1051HVD.png" style="max-width: 500px; height: auto;" alt="Dimensions"><br/> Dimensions</a></div>
-</div><div style="break-before: page; page-break-before: always;"></div><h1 id="topology-1"><a class="header" href="#topology-1">Topology</a></h1>
-<div align="center">
+</div></div><div style="break-before: page; page-break-before: always;"></div><h1 id="topology-1"><a class="header" href="#topology-1">Topology</a></h1>
 <div align="center">
 <div align="center"><a href="hardware/../resources/unit_topology_v_1_0_ue0085_TCAN1051HVD.png"><img src="hardware/../resources/unit_topology_v_1_0_ue0085_TCAN1051HVD.png" style="max-width: 500px; height: auto;" alt="Topology"><br/> Topology</a></div>
 <br/>
@@ -295,10 +336,13 @@ See <a href="LICENSE.html"><code>LICENSE.md</code></a> for details.</p>
 <tr><td>J2</td><td>Terminal Screw Block for CAN Bus</td></tr>
 <tr><td>SB1</td><td>Solder Bridge for VIO</td></tr>
 </tbody></table>
-</div></div>
+</div></div><div style="break-before: page; page-break-before: always;"></div><h1 id="dimensions-1"><a class="header" href="#dimensions-1">Dimensions</a></h1>
+<div align="center">
+<div align="center"><a href="hardware/../resources/unit_dimensions_v_1_0_ue0085_TCAN1051HVD.png"><img src="hardware/../resources/unit_dimensions_v_1_0_ue0085_TCAN1051HVD.png" style="max-width: 500px; height: auto;" alt="Dimensions"><br/> Dimensions</a></div>
+</div>
 <h1 id="references-1"><a class="header" href="#references-1">References</a></h1>
 <ul>
-<li><a href="hardware/%7B%7Bdatasheet_url%7D%7D">{{datasheet_name}}</a></li>
+<li><a href="https://www.ti.com/lit/ds/symlink/tcan1051hv.pdf?ts=1762979634497&ref_url=https%253A%252F%252Fwww.ti.com%252Fproduct%252Fes-mx%252FTCAN1051HV%252Fpart-details%252FTCAN1051HVD">TCAN1051 Datasheet</a></li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="getting-started"><a class="header" href="#getting-started">Getting Started</a></h1>
 <div align="center">
