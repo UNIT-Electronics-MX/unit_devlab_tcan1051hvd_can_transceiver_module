@@ -11,3 +11,6 @@ software/sphinx/docs
 software/sphinx/pdf
 software/venv
 software/firmware
+__pycache__/
+build/
+*.pyc
