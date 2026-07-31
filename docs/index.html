@@ -1,304 +1,367 @@
-<!DOCTYPE HTML>
-<html lang="en" class="light sidebar-visible" dir="ltr">
-    <head>
-        <!-- Book generated using mdBook -->
-        <meta charset="UTF-8">
-        <title>Introduction</title>
-
-
-        <!-- Custom HTML head -->
-
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#ffffff">
-
-        <link rel="icon" href="favicon.svg">
-        <link rel="shortcut icon" href="favicon.png">
-        <link rel="stylesheet" href="css/variables.css">
-        <link rel="stylesheet" href="css/general.css">
-        <link rel="stylesheet" href="css/chrome.css">
-        <link rel="stylesheet" href="css/print.css" media="print">
-
-        <!-- Fonts -->
-        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="fonts/fonts.css">
-
-        <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" id="highlight-css" href="highlight.css">
-        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
-        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
-
-        <!-- Custom theme stylesheets -->
-
-
-        <!-- Provide site root and default themes to javascript -->
-        <script>
-            const path_to_root = "";
-            const default_light_theme = "light";
-            const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex.js";
-        </script>
-        <!-- Start loading toc.js asap -->
-        <script src="toc.js"></script>
-    </head>
-    <body>
-    <div id="mdbook-help-container">
-        <div id="mdbook-help-popup">
-            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
-            <div>
-                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
-                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
-                <p>Press <kbd>?</kbd> to show this help</p>
-                <p>Press <kbd>Esc</kbd> to hide this help</p>
-            </div>
-        </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TCAN1051HVD CAN Transceiver Module hardware documentation and downloads">
+  <title>TCAN1051HVD CAN Transceiver Module | Hardware Resources</title>
+  <style>
+    :root {
+      --ink: #17202a;
+      --muted: #667085;
+      --line: #dfe3e8;
+      --brand: #e53b2c;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font: 16px/1.5 Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+    }
+    .site-header { border-bottom: 1px solid var(--line); }
+    .header-content, main {
+      width: min(1100px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+    .header-content { padding: 28px 0; }
+    .eyebrow {
+      margin: 0 0 4px;
+      color: var(--brand);
+      font-size: .8rem;
+      font-weight: 700;
+    }
+    h1 { margin: 0; font-size: 1.8rem; }
+    .subtitle { margin: 5px 0 0; color: var(--muted); }
+    .summary {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: .85rem;
+    }
+    .summary strong { color: var(--ink); }
+    main { padding: 24px 0 48px; }
+    .toolbar { margin-bottom: 24px; }
+    .search {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      color: var(--ink);
+      font: inherit;
+    }
+    .search:focus { outline: 2px solid #f6c4bf; border-color: var(--brand); }
+    .resource-section { margin-top: 24px; }
+    .section-heading {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      border-bottom: 1px solid var(--line);
+    }
+    .section-heading h2 { margin: 0 0 7px; font-size: 1.05rem; }
+    .section-heading span { color: var(--muted); font-size: .85rem; }
+    .resource-list { border-top: 1px solid var(--line); }
+    .resource-item {
+      display: grid;
+      grid-template-columns: 70px minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 16px;
+      padding: 14px 8px;
+      border: 1px solid var(--line);
+      border-top: 0;
+    }
+    .file-meta { display: grid; gap: 4px; text-align: center; }
+    .file-type {
+      color: var(--brand);
+      font-size: .78rem;
+    }
+    .file-size { color: var(--muted); font-size: .78rem; }
+    .resource-details { min-width: 0; }
+    .resource-item h3 { margin: 0; font-size: 1rem; }
+    .resource-item p {
+      display: inline;
+      margin: 0 8px 0 0;
+      color: var(--muted);
+      font-size: .85rem;
+    }
+    .resource-item code {
+      display: block;
+      overflow: hidden;
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: .7rem;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .actions { display: flex; gap: 6px; }
+    .button {
+      display: inline-flex;
+      justify-content: center;
+      padding: 7px 10px;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      color: var(--ink);
+      background: #fff;
+      cursor: pointer;
+      text-decoration: none;
+      font-size: .8rem;
+      font-weight: 600;
+      font-family: inherit;
+    }
+    .button:hover { border-color: #aeb4bd; }
+    .button.primary { color: #fff; border-color: var(--brand); background: var(--brand); }
+    .empty-state { display: none; padding: 32px 0; color: var(--muted); text-align: center; }
+    footer { padding: 24px 16px; border-top: 1px solid var(--line); color: var(--muted); text-align: center; font-size: .82rem; }
+    [hidden] { display: none !important; }
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    @media (max-width: 680px) {
+      .resource-item { grid-template-columns: 52px minmax(0, 1fr); }
+      .actions { grid-column: 1 / -1; padding-left: 68px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-content">
+      <p class="eyebrow">UNIT Electronics · UE0085</p>
+      <h1>TCAN1051HVD CAN Transceiver Module</h1>
+      <p class="subtitle">Direct links to hardware documentation and product files for use in external platforms.</p>
+      <div class="summary" aria-label="Resource summary">
+        <span><strong>9</strong> files</span>
+        <span><strong>4</strong> images</span>
+        <span><strong>4</strong> formats</span>
+        <span><strong>4.6 MB</strong> total</span>
+      </div>
     </div>
-    <div id="body-container">
-        <!-- Work around some values being stored in localStorage wrapped in quotes -->
-        <script>
-            try {
-                let theme = localStorage.getItem('mdbook-theme');
-                let sidebar = localStorage.getItem('mdbook-sidebar');
-
-                if (theme.startsWith('"') && theme.endsWith('"')) {
-                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
-                }
-
-                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
-                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
-                }
-            } catch (e) { }
-        </script>
-
-        <!-- Set the theme before any content is loaded, prevents flash -->
-        <script>
-            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
-            let theme;
-            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
-            if (theme === null || theme === undefined) { theme = default_theme; }
-            const html = document.documentElement;
-            html.classList.remove('light')
-            html.classList.add(theme);
-            html.classList.add("js");
-        </script>
-
-        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
-
-        <!-- Hide / unhide sidebar before it is displayed -->
-        <script>
-            let sidebar = null;
-            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
-            if (document.body.clientWidth >= 1080) {
-                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
-                sidebar = sidebar || 'visible';
-            } else {
-                sidebar = 'hidden';
-                sidebar_toggle.checked = false;
-            }
-            if (sidebar === 'visible') {
-                sidebar_toggle.checked = true;
-            } else {
-                html.classList.remove('sidebar-visible');
-            }
-        </script>
-
-        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <!-- populated by js -->
-            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
-            <noscript>
-                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
-            </noscript>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
-                <div class="sidebar-resize-indicator"></div>
-            </div>
-        </nav>
-
-        <div id="page-wrapper" class="page-wrapper">
-
-            <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky">
-                    <div class="left-buttons">
-                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                            <i class="fa fa-bars"></i>
-                        </label>
-                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                            <i class="fa fa-paint-brush"></i>
-                        </button>
-                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
-                        </ul>
-                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
-                            <i class="fa fa-search"></i>
-                        </button>
-                    </div>
-
-                    <h1 class="menu-title"></h1>
-
-                    <div class="right-buttons">
-                        <a href="print.html" title="Print this book" aria-label="Print this book">
-                            <i id="print-button" class="fa fa-print"></i>
-                        </a>
-
-                    </div>
-                </div>
-
-                <div id="search-wrapper" class="hidden">
-                    <form id="searchbar-outer" class="searchbar-outer">
-                        <div class="search-wrapper">
-                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
-                            <div class="spinner-wrapper">
-                                <i class="fa fa-spinner fa-spin"></i>
-                            </div>
-                        </div>
-                    </form>
-                    <div id="searchresults-outer" class="searchresults-outer hidden">
-                        <div id="searchresults-header" class="searchresults-header"></div>
-                        <ul id="searchresults">
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
-                <script>
-                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
-                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
-                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
-                    });
-                </script>
-
-                <div id="content" class="content">
-                    <main>
-                        <h1 id="devlab-tcan1051hvd-can-transceiver-module"><a class="header" href="#devlab-tcan1051hvd-can-transceiver-module">DevLab: TCAN1051HVD CAN Transceiver Module</a></h1>
-<h2 id="introduction"><a class="header" href="#introduction">Introduction</a></h2>
-<p>The TCAN1051HVD is a high-speed CAN transceiver designed for automotive and industrial applications. It provides a robust interface between a CAN controller and the physical CAN bus, ensuring reliable data transmission in harsh environments. This module is ideal for use in electric vehicles, industrial automation, and other applications requiring reliable CAN communication.</p>
-<div align="center">
-  <a href="#"><img src="https://img.shields.io/badge/version-1.0-blue.svg" alt="Version"></a>
-  <a href="#"><img src="https://img.shields.io/badge/language-Python-lightgrey.svg" alt="Language"></a>
-  <a href="#"><img src="https://img.shields.io/badge/language-C-lightgrey.svg" alt="Language"></a>
-  <a href="#"><img src="https://img.shields.io/badge/license-MIT-green.svg" alt="License"></a>
-  <br>
-</div>
-<div align="center">
-  <img src="resources/unit_top_v_1_0_ue0085_TCAN1051HVD.png" style="max-width: 80%; height: auto;" alt="Product Image">
-  <p><em>TCAN1051HVD</em></p>
-</div>
-<div align="center">
-<h3 id="quick-setup"><a class="header" href="#quick-setup">Quick Setup</a></h3>
-<p><a href="#"><div align="center"><img src="https://img.shields.io/badge/Product%20Wiki-blue?style=for-the-badge" alt="Product Wiki" style="max-width: 80%; height: auto;"></div></a>
-<a href="#"><div align="center"><img src="https://img.shields.io/badge/Datasheet-green?style=for-the-badge" alt="Datasheet" style="max-width: 80%; height: auto;"></div></a>
-<a href="https://uelectronics.com/"><div align="center"><img src="https://img.shields.io/badge/Buy%20Now-orange?style=for-the-badge" alt="Buy Now" style="max-width: 80%; height: auto;"></div></a>
-<a href="#"><div align="center"><img src="https://img.shields.io/badge/Getting%20Started-purple?style=for-the-badge" alt="Getting Started" style="max-width: 80%; height: auto;"></div></a></p>
-</div>
-<h2 id="overview"><a class="header" href="#overview">Overview</a></h2>
-<div class="table-wrapper"><table><thead><tr><th>Feature / Component</th><th>Details</th></tr></thead><tbody>
-<tr><td><strong>Communication</strong></td><td>High-speed CAN interface for reliable data transfer.</td></tr>
-<tr><td><strong>Operating Voltage</strong></td><td>Supports 3.3V and 5V logic levels.</td></tr>
-<tr><td><strong>Input Port</strong></td><td>JST 1.0 mm 4-pin connector for power and CAN signals.</td></tr>
-<tr><td><strong>IC1 – TCAN1051HVD</strong></td><td>Automotive-grade CAN transceiver IC.</td></tr>
-<tr><td><strong>IC2 – AP2112K</strong></td><td>3.3V LDO regulator for stable voltage.</td></tr>
-<tr><td><strong>IC3 – TPS61023</strong></td><td>5V boost converter for efficient power delivery.</td></tr>
-<tr><td><strong>L1 – Power LED</strong></td><td>On-board LED for power status indication.</td></tr>
-<tr><td><strong>JP1 / JP2</strong></td><td>2.54 mm castellated holes for flexible mounting or soldering.</td></tr>
-<tr><td><strong>J1 – CAN Data Port</strong></td><td>JST 1.0 mm connector for CAN bus data lines.</td></tr>
-<tr><td><strong>J2 – Screw Terminal</strong></td><td>Terminal block for secure CAN bus wiring.</td></tr>
-<tr><td><strong>SB1 – Logic Voltage Selector</strong></td><td>Solder bridge to select logic voltage (VIO).</td></tr>
-</tbody></table>
-</div>
-<h2 id="applications"><a class="header" href="#applications">Applications</a></h2>
-<ul>
-<li>Automotive systems</li>
-<li>Robotics</li>
-<li>Home automation</li>
-<li>IoT devices</li>
-</ul>
-<h2 id="license"><a class="header" href="#license">License</a></h2>
-<p>This product and its documentation are licensed under the MIT License.<br />
-See <a href="LICENSE.html"><code>LICENSE.md</code></a> for details.</p>
-<div align="center">
-  <sub>Template by UNIT Electronics • Customize this file for your product documentation.</sub>
-</div>
-                    </main>
-
-                    <nav class="nav-wrapper" aria-label="Page navigation">
-                        <!-- Mobile navigation buttons -->
-
-                            <a rel="next prefetch" href="hardware/overview.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-
-                        <div style="clear: both"></div>
-                    </nav>
-                </div>
-            </div>
-
-            <nav class="nav-wide-wrapper" aria-label="Page navigation">
-
-                    <a rel="next prefetch" href="hardware/overview.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
-            </nav>
-
-        </div>
-
-
-
-
-        <script>
-            window.playground_copyable = true;
-        </script>
-
-
-        <script src="elasticlunr.min.js"></script>
-        <script src="mark.min.js"></script>
-        <script src="searcher.js"></script>
-
-        <script src="clipboard.min.js"></script>
-        <script src="highlight.js"></script>
-        <script src="book.js"></script>
-
-        <!-- Custom JS scripts -->
-
-
-
+  </header>
+  <main>
+    <div class="toolbar">
+      <label for="resource-search" class="visually-hidden">Search hardware resources</label>
+      <input id="resource-search" class="search" type="search" placeholder="Search hardware resources…" autocomplete="off">
     </div>
-    </body>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    setTimeout(function() {
-        const menuBar = document.querySelector(".menu-bar .right-buttons");
-        if (menuBar) {
-            // Shop Link
-            const shopLink = document.createElement("a");
-            shopLink.href = "https://uelectronics.com/";
-            shopLink.target = "_blank";
-            shopLink.innerHTML = "🛒";
-            shopLink.title = "Shop";
-            shopLink.style.cssText = "color: #666; text-decoration: none; padding: 4px; font-size: 14px; margin-right: 4px; border: 1px solid #ddd; border-radius: 3px; transition: all 0.2s ease; display: inline-block; text-align: center; width: 24px; height: 24px; line-height: 16px;";
-            shopLink.onmouseover = function() { this.style.borderColor = "#999"; this.style.backgroundColor = "#f5f5f5"; };
-            shopLink.onmouseout = function() { this.style.borderColor = "#ddd"; this.style.backgroundColor = "transparent"; };
-            
-            // Repository Link
-            const repoLink = document.createElement("a");
-            repoLink.href = "https://github.com/UNIT-Electronics-MX/unit_devlab_tcan1051hvd_can_transceiver_module";
-            repoLink.target = "_blank";
-            repoLink.innerHTML = "📋";
-            repoLink.title = "Repository";
-            repoLink.style.cssText = "color: #666; text-decoration: none; padding: 4px; font-size: 14px; margin-right: 4px; border: 1px solid #ddd; border-radius: 3px; transition: all 0.2s ease; display: inline-block; text-align: center; width: 24px; height: 24px; line-height: 16px;";
-            repoLink.onmouseover = function() { this.style.borderColor = "#999"; this.style.backgroundColor = "#f5f5f5"; };
-            repoLink.onmouseout = function() { this.style.borderColor = "#ddd"; this.style.backgroundColor = "transparent"; };
-            
-            // Insert links in correct order
-            menuBar.insertBefore(repoLink, menuBar.firstChild);
-            menuBar.insertBefore(shopLink, menuBar.firstChild);
-        }
-    }, 100);
-});
-</script>
+
+      <section class="resource-section">
+        <div class="section-heading">
+          <h2>Product documents</h2>
+          <span>3 files</span>
+        </div>
+        <div class="resource-list">
+        <article class="resource-item" data-search="product reference hardware/unit_product_reference_v_1_0_0_ue0085_tcan1051hvd_can_transceiver_module.docx editable product reference">
+          <div class="file-meta">
+            <strong class="file-type">DOCX</strong>
+            <span class="file-size">1.0 MB</span>
+          </div>
+          <div class="resource-details">
+            <h3>Product Reference</h3>
+            <p>Editable product reference</p>
+            <code title="unit_product_reference_v_1_0_0_ue0085_tcan1051hvd_can_transceiver_module.docx">unit_product_reference_v_1_0_0_ue0085_tcan1051hvd_can_transceiver_module.docx</code>
+          </div>
+          <div class="actions">
+            <button class="button primary copy-link" type="button" data-url="hardware/unit_product_reference_v_1_0_0_ue0085_tcan1051hvd_can_transceiver_module.docx">Copy link</button>
+            <a class="button" href="hardware/unit_product_reference_v_1_0_0_ue0085_tcan1051hvd_can_transceiver_module.docx" target="_blank" rel="noopener">Open file</a>
+          </div>
+        </article>
+
+        <article class="resource-item" data-search="product reference hardware/unit_product_reference_v_1_0_0_ue0085_tcan1051hvd_can_transceiver_module.pdf publication-ready product reference">
+          <div class="file-meta">
+            <strong class="file-type">PDF</strong>
+            <span class="file-size">1.3 MB</span>
+          </div>
+          <div class="resource-details">
+            <h3>Product Reference</h3>
+            <p>Publication-ready product reference</p>
+            <code title="unit_product_reference_v_1_0_0_ue0085_tcan1051hvd_can_transceiver_module.pdf">unit_product_reference_v_1_0_0_ue0085_tcan1051hvd_can_transceiver_module.pdf</code>
+          </div>
+          <div class="actions">
+            <button class="button primary copy-link" type="button" data-url="hardware/unit_product_reference_v_1_0_0_ue0085_tcan1051hvd_can_transceiver_module.pdf">Copy link</button>
+            <a class="button" href="hardware/unit_product_reference_v_1_0_0_ue0085_tcan1051hvd_can_transceiver_module.pdf" target="_blank" rel="noopener">Open file</a>
+          </div>
+        </article>
+
+        <article class="resource-item" data-search="schematic hardware/unit_schematic_v_1_0_ue0085_tcan1051hvd.pdf electrical schematic">
+          <div class="file-meta">
+            <strong class="file-type">PDF</strong>
+            <span class="file-size">80.0 KB</span>
+          </div>
+          <div class="resource-details">
+            <h3>Schematic</h3>
+            <p>Electrical schematic</p>
+            <code title="unit_schematic_v_1_0_ue0085_TCAN1051HVD.pdf">unit_schematic_v_1_0_ue0085_TCAN1051HVD.pdf</code>
+          </div>
+          <div class="actions">
+            <button class="button primary copy-link" type="button" data-url="hardware/unit_schematic_v_1_0_ue0085_TCAN1051HVD.pdf">Copy link</button>
+            <a class="button" href="hardware/unit_schematic_v_1_0_ue0085_TCAN1051HVD.pdf" target="_blank" rel="noopener">Open file</a>
+          </div>
+        </article>
+        </div>
+      </section>
+      <section class="resource-section">
+        <div class="section-heading">
+          <h2>Board views</h2>
+          <span>4 files</span>
+        </div>
+        <div class="resource-list">
+        <article class="resource-item" data-search="board topology hardware/resources/unit_topology_v_1_0_ue0085_tcan1051hvd.png functional board layout">
+          <div class="file-meta">
+            <strong class="file-type">PNG</strong>
+            <span class="file-size">630.0 KB</span>
+          </div>
+          <div class="resource-details">
+            <h3>Board Topology</h3>
+            <p>Functional board layout</p>
+            <code title="resources/unit_topology_v_1_0_ue0085_TCAN1051HVD.png">resources/unit_topology_v_1_0_ue0085_TCAN1051HVD.png</code>
+          </div>
+          <div class="actions">
+            <button class="button primary copy-link" type="button" data-url="hardware/resources/unit_topology_v_1_0_ue0085_TCAN1051HVD.png">Copy link</button>
+            <a class="button" href="hardware/resources/unit_topology_v_1_0_ue0085_TCAN1051HVD.png" target="_blank" rel="noopener">Open file</a>
+          </div>
+        </article>
+
+        <article class="resource-item" data-search="bottom view hardware/resources/unit_btm_v_1_0_ue0085_tcan1051hvd.png bottom-side board view">
+          <div class="file-meta">
+            <strong class="file-type">PNG</strong>
+            <span class="file-size">177.6 KB</span>
+          </div>
+          <div class="resource-details">
+            <h3>Bottom View</h3>
+            <p>Bottom-side board view</p>
+            <code title="resources/unit_btm_v_1_0_ue0085_TCAN1051HVD.png">resources/unit_btm_v_1_0_ue0085_TCAN1051HVD.png</code>
+          </div>
+          <div class="actions">
+            <button class="button primary copy-link" type="button" data-url="hardware/resources/unit_btm_v_1_0_ue0085_TCAN1051HVD.png">Copy link</button>
+            <a class="button" href="hardware/resources/unit_btm_v_1_0_ue0085_TCAN1051HVD.png" target="_blank" rel="noopener">Open file</a>
+          </div>
+        </article>
+
+        <article class="resource-item" data-search="mechanical dimensions hardware/resources/unit_dimensions_v_1_0_ue0085_tcan1051hvd.png board outline and dimensions">
+          <div class="file-meta">
+            <strong class="file-type">PNG</strong>
+            <span class="file-size">172.0 KB</span>
+          </div>
+          <div class="resource-details">
+            <h3>Mechanical Dimensions</h3>
+            <p>Board outline and dimensions</p>
+            <code title="resources/unit_dimensions_v_1_0_ue0085_TCAN1051HVD.png">resources/unit_dimensions_v_1_0_ue0085_TCAN1051HVD.png</code>
+          </div>
+          <div class="actions">
+            <button class="button primary copy-link" type="button" data-url="hardware/resources/unit_dimensions_v_1_0_ue0085_TCAN1051HVD.png">Copy link</button>
+            <a class="button" href="hardware/resources/unit_dimensions_v_1_0_ue0085_TCAN1051HVD.png" target="_blank" rel="noopener">Open file</a>
+          </div>
+        </article>
+
+        <article class="resource-item" data-search="top view hardware/resources/unit_top_v_1_0_ue0085_tcan1051hvd.png top-side board view">
+          <div class="file-meta">
+            <strong class="file-type">PNG</strong>
+            <span class="file-size">210.9 KB</span>
+          </div>
+          <div class="resource-details">
+            <h3>Top View</h3>
+            <p>Top-side board view</p>
+            <code title="resources/unit_top_v_1_0_ue0085_TCAN1051HVD.png">resources/unit_top_v_1_0_ue0085_TCAN1051HVD.png</code>
+          </div>
+          <div class="actions">
+            <button class="button primary copy-link" type="button" data-url="hardware/resources/unit_top_v_1_0_ue0085_TCAN1051HVD.png">Copy link</button>
+            <a class="button" href="hardware/resources/unit_top_v_1_0_ue0085_TCAN1051HVD.png" target="_blank" rel="noopener">Open file</a>
+          </div>
+        </article>
+        </div>
+      </section>
+      <section class="resource-section">
+        <div class="section-heading">
+          <h2>Other resources</h2>
+          <span>2 files</span>
+        </div>
+        <div class="resource-list">
+        <article class="resource-item" data-search="hardware readme hardware/readme.md hardware overview and source notes">
+          <div class="file-meta">
+            <strong class="file-type">MD</strong>
+            <span class="file-size">3.9 KB</span>
+          </div>
+          <div class="resource-details">
+            <h3>Hardware README</h3>
+            <p>Hardware overview and source notes</p>
+            <code title="README.md">README.md</code>
+          </div>
+          <div class="actions">
+            <button class="button primary copy-link" type="button" data-url="hardware/README.md">Copy link</button>
+            <a class="button" href="hardware/README.md" target="_blank" rel="noopener">Open file</a>
+          </div>
+        </article>
+
+        <article class="resource-item" data-search="tcan1051hv hardware/resources/datasheet/tcan1051hv.pdf hardware resource">
+          <div class="file-meta">
+            <strong class="file-type">PDF</strong>
+            <span class="file-size">1.1 MB</span>
+          </div>
+          <div class="resource-details">
+            <h3>Tcan1051Hv</h3>
+            <p>Hardware resource</p>
+            <code title="resources/datasheet/tcan1051hv.pdf">resources/datasheet/tcan1051hv.pdf</code>
+          </div>
+          <div class="actions">
+            <button class="button primary copy-link" type="button" data-url="hardware/resources/datasheet/tcan1051hv.pdf">Copy link</button>
+            <a class="button" href="hardware/resources/datasheet/tcan1051hv.pdf" target="_blank" rel="noopener">Open file</a>
+          </div>
+        </article>
+        </div>
+      </section>
+    <p id="empty-state" class="empty-state">No resources match your search.</p>
+  </main>
+  <footer>UNIT Electronics hardware resources</footer>
+  <script>
+    const search = document.getElementById('resource-search');
+    const sections = [...document.querySelectorAll('.resource-section')];
+    const emptyState = document.getElementById('empty-state');
+    const copyText = async (text) => {
+      try {
+        await navigator.clipboard.writeText(text);
+      } catch (error) {
+        const input = document.createElement('textarea');
+        input.value = text;
+        input.style.position = 'fixed';
+        input.style.opacity = '0';
+        document.body.appendChild(input);
+        input.select();
+        document.execCommand('copy');
+        input.remove();
+      }
+    };
+    document.querySelectorAll('.copy-link').forEach((button) => {
+      button.addEventListener('click', async () => {
+        const absoluteUrl = new URL(button.dataset.url, window.location.href).href;
+        await copyText(absoluteUrl);
+        const originalLabel = button.textContent;
+        button.textContent = 'Copied';
+        setTimeout(() => { button.textContent = originalLabel; }, 1600);
+      });
+    });
+    search.addEventListener('input', () => {
+      const query = search.value.trim().toLowerCase();
+      let visibleCards = 0;
+      sections.forEach((section) => {
+        let sectionCards = 0;
+        section.querySelectorAll('.resource-item').forEach((card) => {
+          const match = card.dataset.search.includes(query);
+          card.hidden = !match;
+          sectionCards += Number(match);
+        });
+        section.hidden = sectionCards === 0;
+        visibleCards += sectionCards;
+      });
+      emptyState.style.display = visibleCards ? 'none' : 'block';
+    });
+  </script>
+</body>
 </html>
