@@ -4,7 +4,7 @@
 
 The complete revision 1 schematic is distributed with this product reference:
 
-[Open the UE0085 TCAN1051HVD module schematic](hardware/unit_schematic_v_1_0_ue0085_TCAN1051HVD.pdf)
+[Open the UE0085 TCAN1051HVD module schematic](https://unit-electronics-mx.github.io/unit_devlab_tcan1051hvd_can_transceiver_module/hardware/unit_schematic_v_1_0_ue0085_TCAN1051HVD.pdf)
 
 ### 9.2 Design Notes
 
