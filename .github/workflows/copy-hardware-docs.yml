@@ -5,12 +5,14 @@ on:
     branches: [ main ]
     paths:
       - 'hardware/**'
+      - 'software/**'
       - 'tools/product-reference/**'
       - '.github/scripts/**'
       - '.github/workflows/copy-hardware-docs.yml'
   pull_request:
     paths:
       - 'hardware/**'
+      - 'software/**'
       - 'tools/product-reference/**'
       - '.github/scripts/**'
       - '.github/workflows/copy-hardware-docs.yml'
