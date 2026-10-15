@@ -37,7 +37,7 @@
 ## Pinout
 
 <div align="center">
-    <a href="./resources/unit_top_v_1_0_ue0085_TCAN1051HVD.png"><img src="./resources/unit_top_v_1_0_ue0085_TCAN1051HVD.png" width="500px" alt="UE0085 pinout"><br/>Pinout</a>
+    <a href="./unit_pinout_v_1_1_ue0085_tcan1051hvd_en.pdf"><img src="./resources/unit_pinout_v_1_1_ue0085_tcan1051hvd_en.png" width="500px" alt="UE0085 pinout"><br/>Pinout</a>
     <br/>
     <br/>
     <br/>
