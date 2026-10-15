@@ -30,7 +30,7 @@ The transceiver does **not** implement the CAN protocol by itself. Message frami
 - 2 × TCAN1051HVD CAN transceiver modules (one per board)
 - CANH/CANL wiring and a shared ground reference
 - Appropriate CAN bus termination (typically 120 Ω at each physical end of the bus)
-- USB cables for programming and serial monitoring
+- 2 x USB cables for programming and serial monitoring
 
 ### Software
 
