@@ -15,6 +15,7 @@ An onboard 5 V boost converter, 3.3 V linear regulator,
 selectable logic voltage, and CAN bus protection circuitry
 support integration with 3.3 V and 5 V controllers.
 
+
 ### **1.1 Accessories** {.section-page}
 
 The UE0085 module is supplied with the following accessories:
@@ -25,13 +26,15 @@ The UE0085 module is supplied with the following accessories:
 | JST/Qwiic-compatible cable (AR4561) | 1 | Connects the module to the host controller through the 4-pin interface |
 | Single-row male header, 1 × 9 pins | 1 | Provides solderable connections for board integration |
 | Single-row male header, 1 × 8 pins | 1 | Provides additional solderable connections |
-| Jumper bridge, 2.54 mm | 2 | Configures onboard jumper-selectable functions |
+| Jumper bridge, 2.54 mm | 2 | Used for VIO logic-voltage selection (3.3 V or 5 V) and enabling the onboard 120 Ω CAN bus termination |
 
 The supplied headers and jumper bridges may require
 installation depending on the intended application.
 
-Verify connector orientation, signal assignment, and
-voltage compatibility before connecting the module.
+Select only one VIO voltage level at a time.
+Enable the 120 Ω termination only when the module is
+installed at a physical end of the CAN bus.
+
 
 ### **1.2 Board Identification**
 
