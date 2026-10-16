@@ -28,7 +28,7 @@
 
 </div>
 
-*VIN is a module-level recommendation. VCC, VIO, I/O current, CAN FD rate, and temperature are TCAN1051HVD specifications. The assembled module has not been independently qualified over the complete IC temperature range.
+*VIN is a module-level recommendation. VCC, VIO, I/O current, CAN FD rate, and temperature are TCAN1051HVD specifications. The 1 Mbps limit in the ESP32-H2/P4 examples belongs to their TWAI controllers, not this transceiver. The assembled module has not been independently qualified over the complete IC temperature range.
 
 **The ±70 V CAN bus-fault value specified for the H-suffix transceiver is an absolute maximum IC stress rating. It must not be applied to VIN, CTX, CRX, EN, VIO, 3V3, or 5V.
 
@@ -97,4 +97,4 @@ Nominal board outline: **29.83 mm × 25.40 mm**. Mounting-hole diameter: **3 mm*
 
 - <a href="../docs/hardware/unit_product_reference_v_1_0_0_ue0085_tcan1051hvd_can_transceiver_module.pdf">UE0085 Product Reference Manual</a>
 - <a href="./resources/datasheet/tcan1051hv.pdf">Local TCAN1051HV Datasheet</a>
-- <a href="https://www.ti.com/lit/ds/symlink/tcan1051hv.pdf">Texas Instruments TCAN1051HV Datasheet</a>
+- <a href="https://www.ti.com/lit/ds/symlink/tcan1051hv.pdf">TCAN1051HV Datasheet</a>
