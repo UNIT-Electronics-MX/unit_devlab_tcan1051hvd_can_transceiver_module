@@ -58,20 +58,20 @@ controlled independently.
 
 ### **1.3 Identified Assemblies**
 
-| Assembly | Function | Source status |
-|---|---|---|
-| TCAN1051HVD (IC1) | High-speed CAN physical-layer transceiver supporting Classic CAN and CAN FD data rates up to 2 Mbps | Identified in the schematic and product reference |
-| TPS61023 (U1) | Boost converter generating the regulated 5 V rail from VIN | Identified in the schematic |
-| AP2112K-3.3 (U2) | Linear regulator generating the 3.3 V rail from the 5 V supply | Identified in the schematic |
-| PESD2CANFD24L-UX (D1) | Transient protection for CANH and CANL | Identified in the schematic |
-| Green LED (D2) | Indicates the presence of the regulated 5 V supply | Identified in the schematic |
-| Controller connector (J1) | 4-pin, 1 mm-pitch connection for VIN, GND, CTX, and CRX | Identified in the schematic and pinout |
-| CAN bus terminal | 2-position, 3.81 mm screw terminal for CANH and CANL | Identified in the schematic |
-| Split termination network (R2, R3, C5) | Provides 120 Ω CAN bus termination using two 60 Ω resistors and a 4.7 nF center capacitor | Identified in the schematic |
-| Termination selector (JP1) | Controls the connection of the onboard termination network | Identified in the schematic; assembly configuration requires verification |
-| VIO selector (JP4) | Selects 3.3 V or 5 V transceiver logic levels | Identified in the schematic and pinout |
-| Enable signal (EN) | Controls the TPS61023 boost converter | Identified in the schematic and pinout |
-| Castellated contacts | Provide access to power, control, and CAN bus signals | Identified in the board documentation |
+| Assembly | Function |
+|---|---|
+| TCAN1051HVD (IC1) | High-speed CAN physical-layer transceiver supporting Classic CAN and CAN FD data rates up to 2 Mbps |
+| TPS61023 (U1) | Boost converter generating the regulated 5 V rail from VIN |
+| AP2112K-3.3 (U2) | Linear regulator generating the 3.3 V rail from the 5 V supply |
+| PESD2CANFD24L-UX (D1) | Transient protection for CANH and CANL |
+| Green LED (D2) | Indicates the presence of the regulated 5 V supply |
+| Controller connector (J1) | 4-pin, 1 mm-pitch connection for VIN, GND, CTX, and CRX |
+| CAN bus terminal | 2-position, 3.81 mm screw terminal for CANH and CANL |
+| Split termination network (R2, R3, C5) | Provides 120 Ω CAN bus termination using two 60 Ω resistors and a 4.7 nF center capacitor |
+| Termination selector (JP1) | Controls the connection of the onboard termination network |
+| VIO selector (JP4) | Selects 3.3 V or 5 V transceiver logic levels |
+| Enable signal (EN) | Controls the TPS61023 boost converter |
+| Castellated contacts | Provide access to power, control, and CAN bus signals |
 
 The module implements the CAN physical layer only.
 A host microcontroller with an integrated CAN controller
