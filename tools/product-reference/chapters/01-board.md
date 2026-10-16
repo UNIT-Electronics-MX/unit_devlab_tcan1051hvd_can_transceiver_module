@@ -10,9 +10,10 @@ the screw terminal.
 ### 1.1 Package Contents
 
 - 1 × DevLab TCAN1051HVD CAN Transceiver Module (UE0085)
-
-Headers, mating cables, and bus wiring are not included unless stated by the
-product listing.
+- 1 × JST/Qwiic-compatible cable (AR4561)
+- 1 x Single- row male header (1x9 pins)
+- 1 x Single-row male header (1x8 pins)
+- 2 x Jumper Bridge (2.54mm)
 
 ### 1.2 Main Components
 
