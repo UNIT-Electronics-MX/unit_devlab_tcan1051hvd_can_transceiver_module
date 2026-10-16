@@ -8,6 +8,11 @@
   $for(css)$
   <link rel="stylesheet" href="$css$">
   $endfor$
+  <style>
+    @page {
+      @bottom-right { content: "V$version$  ·  $date$"; }
+    }
+  </style>
 </head>
 <body>
   <section class="cover">

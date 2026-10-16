@@ -13,6 +13,8 @@ The complete revision 1 schematic is distributed with this product reference:
 - C5 (4.7 nF) AC-couples the split-termination midpoint to ground.
 - R4 and R5 (22 Ω) are in series with CTX and CRX.
 - D1 protects CANH and CANL.
-- The S (silent-mode) pin is fixed for normal transceiver operation on this
-  module and is not exposed as a user control.
+- IC1 pin S is unconnected in the revision 1 schematic. The TCAN1051HVD's
+  internal pull-down selects normal mode by default; the module does not
+  expose S as a user control. For noisy or transient-prone systems, review
+  this reliance on the IC's internal bias during hardware qualification.
 

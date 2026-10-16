@@ -19,7 +19,7 @@ The **Texas Instruments TCAN1051HVD** is a CAN physical-layer transceiver. It in
 
 The transceiver does **not** implement the CAN protocol by itself. Message framing, arbitration, and error handling are managed by the ESP32 TWAI controller. The Arduino library provides a convenient abstraction over the underlying ESP-IDF TWAI driver.
 
-> **Important:** This library targets the TCAN1051HVD transceiver used with an ESP32 that has a supported native TWAI controller. On the module described here, only **TXD, RXD, VIO, GND, CANH, and CANL** are exposed; the **S (Silent Mode)** pin is not accessible.
+> **Important:** This library targets the TCAN1051HVD transceiver used with an ESP32 that has a supported native TWAI controller. On the UE0085, the IC's TXD/RXD pins connect to module signals **CTX/CRX**; the module also exposes VIN, GND, CANH, CANL, power rails, and EN. IC pin **S** is unconnected in the module schematic and defaults to normal transceiver mode through its internal pull-down; it is not available as a software control.
 
 ## Requirements
 
@@ -42,8 +42,8 @@ The transceiver does **not** implement the CAN protocol by itself. Message frami
 
 1. Open **Arduino IDE**.
 2. Open the **Library Manager**.
-3. Search for **DevLab TCAN1051HVD**.
-4. Install the latest available version.
+3. Search for **DevLab_TCAN1051HVD** and install it if listed.
+4. Otherwise, download the [library repository](https://github.com/UNIT-Electronics-MX/unit_devlab_tcan1051hvd_library) as a ZIP and use **Sketch > Include Library > Add .ZIP Library**.
 
 Include the library in your sketch:
 
@@ -59,18 +59,20 @@ Each ESP32 board must connect to its **own** TCAN1051HVD transceiver.
 
 | TCAN1051HVD signal | ESP32-H2 connection |
 | --- | --- |
-| TXD | GPIO12 |
-| RXD | GPIO22 |
-| VIO / logic supply | 3.3 V (verify module power requirements) |
+| CTX (transceiver TXD) | GPIO12 |
+| CRX (transceiver RXD) | GPIO22 |
+| VIN | Regulated 3.3 V to 5.0 V supply |
+| VIO selector | 3V3 position for ESP32 logic |
 | GND | GND |
 
 ### ESP32-P4 (Receiver)
 
 | TCAN1051HVD signal | ESP32-P4 connection |
 | --- | --- |
-| TXD | GPIO20 |
-| RXD | GPIO21 |
-| VIO / logic supply | 3.3 V (verify module power requirements) |
+| CTX (transceiver TXD) | GPIO20 |
+| CRX (transceiver RXD) | GPIO21 |
+| VIN | Regulated 3.3 V to 5.0 V supply |
+| VIO selector | 3V3 position for ESP32 logic |
 | GND | GND |
 
 ### CAN Bus Wiring
@@ -85,13 +87,13 @@ Each ESP32 board must connect to its **own** TCAN1051HVD transceiver.
 
 - Connect **CANH to CANH** and **CANL to CANL**; do not cross them.
 - Place **120 Ω termination across CANH and CANL at each physical end** of a conventional high-speed CAN bus. Check whether your modules already include termination before adding resistors.
-- Ensure the transceiver's **power-supply and I/O-voltage requirements** are met. The VIO pin is a logic-voltage reference and is not necessarily a substitute for a required transceiver VCC/V supply; consult your specific module's schematic and the TCAN1051HVD datasheet.
-- Both devices must use the **same CAN bit rate**, which may be configured by the library. Check its defaults or API if communication fails.
+- Supply the UE0085 through **VIN**. Its onboard converters generate the transceiver's 5 V supply and the 3.3 V rail; the exposed 5V and 3V3 contacts are outputs. Set the VIO selector to 3V3 for these ESP32 boards, and never bridge both VIO positions. Use a host 3.3 V rail only if it can supply the module.
+- Both devices must use the **same CAN bit rate**. The library's current `begin()` default is 500 kbit/s; set the timing explicitly if changing it.
 - Standard CAN transmission normally requires a second active node to acknowledge the frame. Power and initialize the receiver before testing the transmitter.
 
 ## Example 1 — Pulsar ESP32-H2 CAN Transmitter
 
-The Pulsar ESP32-H2 sends a standard CAN frame with identifier `0x100`, containing a one-byte counter. The counter increments after each successful send and wraps around after `255`.
+The Pulsar ESP32-H2 queues a standard CAN frame with identifier `0x100`, containing a one-byte counter. The counter increments after each successful queue operation and wraps around after `255`.
 
 ```cpp
 #include <DevLab_TCAN1051HVD.h>
@@ -123,7 +125,7 @@ void loop() {
   uint8_t data[1] = {counter};
 
   if (can.send(0x100, data, 1, 0, 0, 1000)) {
-    Serial.print("Sent: ");
+    Serial.print("Queued: ");
     Serial.println(counter);
     counter++;
   } else {
@@ -140,7 +142,7 @@ void loop() {
 - Initializes the ESP32 TWAI controller through the library.
 - Creates a CAN data payload containing one `uint8_t` value.
 - Sends a CAN message with identifier `0x100` approximately once per second.
-- Reports whether the library's send operation succeeded.
+- Reports whether the driver accepted the frame into its transmit queue; receiver output confirms communication.
 
 ## Example 2 — ESP32-P4 CAN Receiver
 
@@ -205,7 +207,7 @@ void loop() {
 4. Upload the **receiver sketch** to the ESP32-P4.
 5. Upload the **transmitter sketch** to the Pulsar ESP32-H2.
 6. Open each board's serial monitor at **115200 baud**.
-7. Confirm that the transmitter reports sends and the receiver displays identifier `0x100` with an increasing counter.
+7. Confirm that the transmitter reports queued frames and the receiver displays identifier `0x100` with an increasing counter.
 
 ### Example Serial Output
 
@@ -214,9 +216,9 @@ void loop() {
 ```text
 Starting ESP32-H2...
 CAN initialized successfully
-Sent: 0
-Sent: 1
-Sent: 2
+Queued: 0
+Queued: 1
+Queued: 2
 ```
 
 **Receiver:**
@@ -266,7 +268,7 @@ In this example, each frame carries **one data byte**. The receiver can inspect 
 - These sketches demonstrate **Classic CAN**, not CAN FD.
 - The example receiver prints only the **first byte** of each received frame.
 - The example does not implement higher-level message sequencing, retransmission policies, or application-layer data integrity checks.
-- The TCAN1051HVD module exposes no accessible **S / Silent Mode** control pin in the described hardware configuration.
+- The UE0085 does not expose IC pin **S / Silent Mode**. Its internal pull-down selects normal transceiver mode by default; TWAI software modes configure the ESP32 controller, not S.
 - Confirm the exact **GPIO availability and electrical specifications** for your board revisions before wiring.
 
 ## References

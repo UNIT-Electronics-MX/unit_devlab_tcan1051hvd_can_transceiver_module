@@ -14,6 +14,11 @@ The TCAN1051HVD includes dominant-timeout, thermal-shutdown, and undervoltage
 protection. The bus and logic pins present high impedance when the transceiver is
 unpowered.
 
+IC1 pin S is unconnected in the revision 1 module schematic. The IC's
+internal pull-down selects normal transceiver mode by default; S is not
+available as a module control. A host's TWAI controller mode is independent
+of this IC pin.
+
 ### 3.2 Power Architecture
 
 VIN feeds the TPS61023 boost converter, which generates the 5 V transceiver
@@ -42,6 +47,10 @@ Close the **120R Termination** selector only when this module is installed at on
 physical end of the CAN trunk. A correctly wired point-to-point bus normally has
 one 120 Ω terminator at each end (approximately 60 Ω measured between CANH and
 CANL with power removed). Leave the selector open at intermediate nodes.
+
+When the selector is closed, the external termination remains connected even
+if IC1 is unpowered. The IC's high-impedance, unpowered bus behavior does not
+remove that board-level 120 Ω load.
 
 ### 3.4 Bus Protection
 

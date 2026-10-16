@@ -14,8 +14,9 @@
  * Wiring (ESP32 H2 Probe default CAN)
  * - TX   -> GPIO12
  * - RX   -> GPIO22
- * - VCC  -> 3V3
+ * - VIN  -> regulated 3V3 (if the host supply has enough capacity)
  * - GND  -> GND
+ * - Set the UE0085 VIO selector to 3V3; connect CTX/CRX to TX/RX
  ***************************************************************/
 #include <DevLab_TCAN1051HVD.h>
 
@@ -48,7 +49,7 @@ void loop() {
 
     if (can.send(0x100, data, 1, 0, 0, 1000)) {
 
-        Serial.print("Enviado: ");
+        Serial.print("Encolado: ");
         Serial.println(contador);
         contador++;
 

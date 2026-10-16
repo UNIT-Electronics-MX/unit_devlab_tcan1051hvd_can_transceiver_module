@@ -14,8 +14,9 @@
  * Wiring (ESP32 P4 Probe default CAN)
  * - TX   -> GPIO20
  * - RX   -> GPIO21
- * - VCC  -> 3V3
+ * - VIN  -> regulated 3V3 (if the host supply has enough capacity)
  * - GND  -> GND
+ * - Set the UE0085 VIO selector to 3V3; connect CTX/CRX to TX/RX
  ***************************************************************/
 
 #include <DevLab_TCAN1051HVD.h>
