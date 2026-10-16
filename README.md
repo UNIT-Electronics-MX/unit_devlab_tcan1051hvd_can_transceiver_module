@@ -2,9 +2,11 @@
 # DevLab: TCAN1051HVD CAN Transceiver Module
 
 
-The TCAN1051HVD CAN Transceiver Module is a compact physical-layer interface between a CAN controller and a differential CAN bus. Based on the Texas Instruments TCAN1051HVD, it supports Classic CAN and CAN FD communication up to 2 Mbps, selectable 3.3 V or 5 V controller logic, onboard power regulation, CAN bus protection, and a 120 Ω termination network.
+The TCAN1051HVD CAN Transceiver Module is a compact physical-layer interface between a CAN controller and a differential CAN bus. Built around the TCAN1051HVD, it supports Classic CAN and CAN FD physical-layer signaling at CAN FD data rates up to 2 Mbps, selectable 3.3 V or 5 V controller logic, onboard power regulation, CAN bus protection, and a 120 Ω termination network.
 
 > **Note:** This module implements the CAN physical layer only. The host must provide a CAN controller or a microcontroller with an integrated CAN/TWAI peripheral.
+
+> The ESP32-H2 and ESP32-P4 TWAI controllers used in the example support Classic CAN up to 1 Mbps, but not CAN FD frames. CAN FD operation requires a compatible CAN FD controller.
 
 <div align="center">
   <a href="#"><img src="https://img.shields.io/badge/version-1.0.0-blue.svg" alt="Version"></a>
@@ -35,7 +37,7 @@ The TCAN1051HVD CAN Transceiver Module is a compact physical-layer interface bet
 
 | Feature / Component              | Details                                                                                      |
 | -------------------------------- | -------------------------------------------------------------------------------------------- |
-| **Communication**                | Classic CAN and CAN FD physical-layer interface up to 2 Mbps.                                |
+| **Communication**                | Classic CAN physical layer; CAN FD data rate up to 2 Mbps with a compatible controller.       |
 | **Input Voltage**                | Module VIN range from 3.3 V to 5.0 V.                                                       |
 | **Logic Voltage**                | Selectable 3.3 V or 5 V controller-side logic through VIO.                                  |
 | **IC1 – TCAN1051HVD**            | High-speed, fault-protected CAN transceiver with separate VIO supply.                        |

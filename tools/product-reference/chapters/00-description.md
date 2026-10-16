@@ -5,7 +5,7 @@ interface for Classic CAN and CAN FD networks. It connects a microcontroller or
 stand-alone CAN controller to the differential CAN bus through the CTX (TXD),
 CRX (RXD), CANH, and CANL signals.
 
-The module is built around the Texas Instruments TCAN1051HVD, a fault-protected
+The module is built around the TCAN1051HVD, a fault-protected
 high-speed CAN transceiver with a separate VIO supply. An onboard boost
 converter and 3.3 V regulator generate the transceiver and logic rails from VIN.
 The VIO selector allows direct use with either 3.3 V or 5 V controllers.
@@ -26,7 +26,7 @@ The VIO selector allows direct use with either 3.3 V or 5 V controllers.
 ### Hardware Features
 
 - TCAN1051HVD high-speed, fault-protected CAN transceiver
-- Classic CAN and CAN FD operation up to 2 Mbps
+- Classic CAN physical layer and CAN FD data rates up to 2 Mbps with a compatible controller
 - Selectable 3.3 V or 5 V logic interface (VIO)
 - Onboard TPS61023 5 V boost converter and AP2112K 3.3 V regulator
 - Switchable split 120 Ω termination (2 × 60 Ω with 4.7 nF center capacitor)

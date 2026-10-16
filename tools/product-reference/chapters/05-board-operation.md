@@ -98,10 +98,12 @@ CANL, ground reference, bit rate, and the two physical end terminations.
 Both sketches explicitly use **500 kbit/s** and `TWAI_MODE_NORMAL`. Every
 node must use the same nominal bit rate. Normal mode requires another active
 node to acknowledge a transmitted frame. The example uses standard 11-bit
-identifier `0x100` and one data byte. The TCAN1051HVD supports the CAN FD
-physical layer up to 2 Mbps, but this ESP32-H2/P4 TWAI example uses **Classic
-CAN frames**, not CAN FD. `TWAI_MODE_NORMAL` selects the ESP32 controller
-mode; it does not drive IC1's unconnected S pin.
+identifier `0x100` and one data byte. The ESP32-H2 and ESP32-P4 TWAI
+controllers support Classic CAN up to 1 Mbps and cannot process CAN FD
+frames. The UE0085's TCAN1051HVD physical layer supports CAN FD up to
+2 Mbps when paired with a CAN FD controller. This example uses **Classic CAN
+frames** at 500 kbit/s. `TWAI_MODE_NORMAL` selects the ESP32 controller mode;
+it does not drive IC1's unconnected S pin.
 
 ### 5.4 CAN Communication Example
 

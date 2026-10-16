@@ -15,7 +15,7 @@ This guide explains how to install and use the **DevLab TCAN1051HVD** Arduino li
 
 ## Overview
 
-The **Texas Instruments TCAN1051HVD** is a CAN physical-layer transceiver. It interfaces an ESP32's native **TWAI (Two-Wire Automotive Interface)** controller with the differential CAN bus through the **CANH** and **CANL** signals.
+The **TCAN1051HVD** is a CAN physical-layer transceiver. It interfaces an ESP32's native **TWAI (Two-Wire Automotive Interface)** controller with the differential CAN bus through the **CANH** and **CANL** signals.
 
 The transceiver does **not** implement the CAN protocol by itself. Message framing, arbitration, and error handling are managed by the ESP32 TWAI controller. The Arduino library provides a convenient abstraction over the underlying ESP-IDF TWAI driver.
 
@@ -266,6 +266,7 @@ In this example, each frame carries **one data byte**. The receiver can inspect 
 ## Notes and Limitations
 
 - These sketches demonstrate **Classic CAN**, not CAN FD.
+- The ESP32-H2 and ESP32-P4 TWAI controllers support Classic CAN up to 1 Mbps and cannot process CAN FD frames. The UE0085 transceiver supports the CAN FD physical layer up to 2 Mbps when used with a compatible CAN FD controller.
 - The example receiver prints only the **first byte** of each received frame.
 - The example does not implement higher-level message sequencing, retransmission policies, or application-layer data integrity checks.
 - The UE0085 does not expose IC pin **S / Silent Mode**. Its internal pull-down selects normal transceiver mode by default; TWAI software modes configure the ESP32 controller, not S.
@@ -273,8 +274,10 @@ In this example, each frame carries **one data byte**. The receiver can inspect 
 
 ## References
 
-- [Texas Instruments TCAN1051 product information](https://www.ti.com/product/TCAN1051)
+- [TCAN1051 product information](https://www.ti.com/product/TCAN1051)
 - [Espressif ESP-IDF TWAI documentation](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/peripherals/twai.html)
+- [ESP32-H2 series datasheet](https://documentation.espressif.com/esp32-h2_datasheet_en.html)
+- [ESP32-P4 series datasheet](https://documentation.espressif.com/esp32-p4_datasheet_en.html)
 - Arduino IDE Library Manager — search for `DevLab TCAN1051HVD`
 
 ---

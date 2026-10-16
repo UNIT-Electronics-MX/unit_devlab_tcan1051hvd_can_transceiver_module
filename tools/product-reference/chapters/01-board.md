@@ -44,7 +44,7 @@ installed at a physical end of the CAN bus.
 | Brand / company | UNIT Electronics |
 | Board ecosystem | DevLab |
 | Product type | High-speed CAN / CAN FD physical-layer transceiver module |
-| Main transceiver | Texas Instruments TCAN1051HVD |
+| Main transceiver | TCAN1051HVD |
 | Power converter | TPS61023 |
 | Voltage regulator | AP2112K-3.3 |
 | Logic interface | Selectable 3.3 V / 5 V |
@@ -60,7 +60,7 @@ controlled independently.
 
 | Assembly | Function | Source status |
 |---|---|---|
-| TCAN1051HVD (IC1) | High-speed CAN physical-layer transceiver supporting Classic CAN and CAN FD up to 2 Mbps | Identified in the schematic and product reference |
+| TCAN1051HVD (IC1) | High-speed CAN physical-layer transceiver supporting Classic CAN and CAN FD data rates up to 2 Mbps | Identified in the schematic and product reference |
 | TPS61023 (U1) | Boost converter generating the regulated 5 V rail from VIN | Identified in the schematic |
 | AP2112K-3.3 (U2) | Linear regulator generating the 3.3 V rail from the 5 V supply | Identified in the schematic |
 | PESD2CANFD24L-UX (D1) | Transient protection for CANH and CANL | Identified in the schematic |
