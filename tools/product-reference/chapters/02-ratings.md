@@ -55,7 +55,7 @@ AP2112K-3.3 low-dropout linear regulator.
 | VOUT | Adjustable output voltage range | 2.2 | — | 5.5 | V |
 | VOUT(MOD) | Configured module output voltage | — | 5.0 | — | V |
 | fSW | Switching frequency, VIN > 1.5 V | — | 1.0 | — | MHz |
-| ILIM | Valley switch current limit, typical | — | 3.7 | — | A |
+| ILIM | Valley switch current limit, typical | — | 1 | — | A |
 
 The TPS61023 generates the regulated 5 V rail from VIN.
 
