@@ -5,7 +5,10 @@ UE0085 module with a Pulsar ESP32-H2 transmitter and a second UE0085 module
 with an ESP32-P4 receiver. The module supplies the CAN physical layer; each
 ESP32 supplies the TWAI/CAN controller.
 
-### 5.1 Required Hardware and Software
+### **5.1 Getting Started with Arduino IDE** {.section-page}
+
+Gather the hardware below before configuring Arduino IDE and uploading the
+example sketches.
 
 | Item | Quantity | Purpose |
 |---|---:|---|
@@ -22,7 +25,7 @@ This library wraps the ESP32 TWAI peripheral; it does not add a CAN controller
 to a host without one. Confirm GPIO availability against the actual
 development-board revisions.
 
-### 5.2 Hardware Connection and Configuration
+### **5.2 Hardware Connection and Configuration** {.section-page}
 
 **Remove power before wiring or changing selectors.** Each host needs its own
 UE0085 module. Connect J1 as follows; these GPIO assignments match the supplied
@@ -63,6 +66,8 @@ the modules occupy the two physical ends. Do not add external terminators when
 both onboard networks are enabled. On a larger bus, terminate only its two
 physical ends and keep branch stubs short.
 
+![](../assets/CANH.png){width=5.2in}
+
 With all power removed, approximately **60 Ω** should measure between CANH
 and CANL on the assembled two-node bus. Approximately 120 Ω suggests a
 missing terminator; a much lower reading suggests extra termination or a
@@ -82,7 +87,7 @@ CANL, ground reference, bit rate, and the two physical end terminations.
 |---|---|
 | ![ESP32-P4 with a blue CAN transceiver and ESP32-H2 with the black UE0085 module](hardware/resources/img/conn1.JPG){width=2.6in} | ![Closer view of the ESP32 boards, UE0085, and second CAN transceiver](hardware/resources/img/conn2.JPG){width=2.6in} |
 
-### 5.3 Arduino Library and Controller Setup
+### **5.3 Arduino Library and Controller Setup** {.section-page}
 
 1. Install a compatible ESP32 board package in Arduino IDE. Select the exact
    ESP32-H2 or ESP32-P4 board and its serial port before each upload.
@@ -105,7 +110,7 @@ frames. The UE0085's TCAN1051HVD physical layer supports CAN FD up to
 frames** at 500 kbit/s. `TWAI_MODE_NORMAL` selects the ESP32 controller mode;
 it does not drive IC1's unconnected S pin.
 
-### 5.4 CAN Communication Example
+### **5.4 CAN Communication Example** {.section-page}
 
 Upload this transmitter sketch to the Pulsar ESP32-H2. It queues a frame
 containing an incrementing byte approximately once per second.
@@ -172,7 +177,7 @@ frame into its transmit queue. By itself, it does **not** prove another node
 acknowledged or received the frame. The receiver output is the end-to-end
 communication check.
 
-### 5.5 Upload and Communication Verification
+### **5.5 Upload and Communication Verification** {.section-page}
 
 1. With power off, recheck VIN, GND, CTX/CRX, CANH/CANL, both VIO selectors,
    and the two end terminators. Confirm about 60 Ω across CANH and CANL.
@@ -198,7 +203,7 @@ ID: 0x100  Counter: 2
 If only the transmitter reports queued frames, communication has not been
 verified. Check the receiver and bus using Section 5.6.
 
-### 5.6 Troubleshooting
+### **5.6 Troubleshooting** {.section-page}
 
 | Symptom | Check |
 |---|---|

@@ -1,12 +1,14 @@
 ## 9 Appendix
 
-### 9.1 Schematic
+### **9.1 Schematic** {.section-page}
 
 The complete revision 1 schematic is distributed with this product reference:
 
 [Open the UE0085 TCAN1051HVD module schematic](https://unit-electronics-mx.github.io/unit_devlab_tcan1051hvd_can_transceiver_module/hardware/unit_schematic_v_1_0_ue0085_TCAN1051HVD.pdf)
 
-### 9.2 Design Notes
+![UE0085 revision 1 schematic, also available as the original PDF](hardware/resources/unit_schematic_v_1_0_ue0085_TCAN1051HVD.png){width=6.5in}
+
+### **9.2 Design Notes** {.section-page}
 
 - R1 provides the switchable 120 Ω termination.
 - R2 and R3 form the 2 × 60 Ω split termination.

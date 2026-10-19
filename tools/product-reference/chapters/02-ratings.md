@@ -1,7 +1,7 @@
 
 ## 2 Ratings and Electrical Characteristics
 
-### 2.1 Recommended Operating Conditions
+### **2.1 Recommended Operating Conditions** {.section-page}
 
 | Symbol | Description | Min | Typ | Max | Unit |
 |---|---|---:|---:|---:|---|
@@ -25,7 +25,7 @@ boost converter and AP2112K-3.3 linear regulator, respectively.
 The complete assembled module has not been independently
 qualified over the full IC temperature range.
 
-### 2.2 Selected Transceiver Characteristics
+### **2.2 Selected Transceiver Characteristics** {.section-page}
 
 Unless otherwise noted, the following characteristics apply
 to the TCAN1051HVD transceiver.
@@ -42,7 +42,7 @@ to the TCAN1051HVD transceiver.
 | VCM | Receiver common-mode range | −30 | — | 30 | V |
 | tPROP(LOOP) | Total loop delay | — | 100 / 110 | 160 / 175 | ns |
 
-### 2.3 Power Regulation Characteristics
+### **2.3 Power Regulation Characteristics** {.section-page}
 
 The module integrates a TPS61023 boost converter and an
 AP2112K-3.3 low-dropout linear regulator.
@@ -91,7 +91,7 @@ power consumption.
 Dropout voltage and operating-temperature limits require
 confirmation against the exact AP2112K manufacturer datasheet.
 
-### 2.4 Absolute Maximum Ratings
+### **2.4 Absolute Maximum Ratings** {.section-page}
 
 Absolute maximum ratings are stress limits, not normal
 operating conditions.
@@ -121,7 +121,7 @@ Their absolute maximum input, output, and temperature
 ratings must not be interpreted as the operating limits
 of the complete UE0085 module.
 
-### 2.5 Module Power and Thermal Considerations
+### **2.5 Module Power and Thermal Considerations** {.section-page}
 
 The module uses the following power architecture:
 

@@ -10,7 +10,7 @@ power connections, and onboard configuration options.
 
 ![](hardware/resources/unit_pinout_v_1_1_ue0085_tcan1051hvd_en.png){width=5.2in}
 
-### 4.1 Signal Reference
+### **4.1 Signal Reference** {.section-page}
 
 | Label | Direction | Description |
 |---|---|---|
@@ -27,13 +27,11 @@ power connections, and onboard configuration options.
 
 The CTX and CRX signals operate at the voltage level
 selected through VIO. The host controller must use
-compatible logic levels.
-
-The module implements the CAN physical layer only.
+compatible logic levels. The module implements the CAN physical layer only.
 An external CAN controller or a microcontroller with
 an integrated CAN peripheral is required.
 
-### 4.2 J1 Controller Connector
+### **4.2 J1 Controller Connector** {.section-page}
 
 J1 is a 4-position, 1 mm-pitch connector providing
 power and communication signals to the host controller.
@@ -51,7 +49,7 @@ order before connecting a cable.
 Verify the cable orientation and signal order before
 connecting the module to an external controller.
 
-### 4.3 J2 CAN Bus Terminal
+### **4.3 J2 CAN Bus Terminal** {.section-page}
 
 J2 is a 2-position, 3.81 mm screw terminal providing
 the differential CAN bus connections.
@@ -65,7 +63,7 @@ Use twisted-pair wiring for CANH and CANL.
 Maintain correct bus polarity and minimize
 stub lengths to preserve signal integrity.
 
-### 4.4 Castellated Headers
+### **4.4 Castellated Headers** {.section-page}
 
 The castellated contacts provide access to controller
 signals, CAN bus connections, regulated power rails,
@@ -79,7 +77,7 @@ integration, and prototyping applications.
 The contact labels are printed on the board silkscreen.
 Refer to the pinout illustration for signal identification.
 
-### 4.5 Configuration Jumpers
+### **4.5 Configuration Jumpers** {.section-page}
 
 The module includes two jumper-selectable functions:
 VIO logic-voltage selection and CAN bus termination.

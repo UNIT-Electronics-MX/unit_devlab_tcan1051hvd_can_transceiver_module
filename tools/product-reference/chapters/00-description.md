@@ -15,7 +15,7 @@ The VIO selector allows direct use with either 3.3 V or 5 V controllers.
 > This module implements the CAN physical layer only. The host must provide a
 > CAN controller or a microcontroller with an integrated CAN/TWAI peripheral.
 
-### Applications
+### **Applications** {.section-page}
 
 - Industrial automation and distributed control
 - Robotics and mobile platforms
@@ -23,7 +23,7 @@ The VIO selector allows direct use with either 3.3 V or 5 V controllers.
 - Automotive prototyping and diagnostics
 - CANopen, DeviceNet, NMEA 2000, ISOBUS, and other CAN-based networks
 
-### Hardware Features
+### **Hardware Features** {.section-page}
 
 - TCAN1051HVD high-speed, fault-protected CAN transceiver
 - Classic CAN physical layer and CAN FD data rates up to 2 Mbps with a compatible controller

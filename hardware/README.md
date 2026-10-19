@@ -1,7 +1,9 @@
 # Hardware
 <div align="center">
 
-<a href="./unit_schematic_v_1_0_ue0085_TCAN1051HVD.pdf"><img src="./resources/Schematics_icon.jpg" width="500px" alt="UE0085 schematic"><br/> Schematics</a>
+<a href="./unit_schematic_v_1_0_ue0085_TCAN1051HVD.pdf"><img src="./resources/unit_schematic_v_1_0_ue0085_TCAN1051HVD.png" width="900px" alt="UE0085 revision 1 schematic preview"><br/> Open the original schematic PDF</a>
+
+<a href="./resources/unit_schematic_v_1_0_ue0085_TCAN1051HVD.png">Open the full-size schematic PNG</a>
 
 </div>
 

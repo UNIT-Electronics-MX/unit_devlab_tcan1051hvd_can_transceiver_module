@@ -49,16 +49,20 @@ for chapter in "${CHAPTERS[@]}"; do
   CHAPTER_PATHS+=("$PROJECT_DIR/$chapter")
 done
 
-while IFS= read -r asset; do
-  if [[ ! -f "$PROJECT_DIR/$asset" ]]; then
-    echo "Error: a chapter references a missing asset: $asset" >&2
-    exit 1
-  fi
-done < <(
-  grep -hEo '!\[[^]]*\]\([^)]*\)' "${CHAPTER_PATHS[@]}" |
-    sed 's/^.*](//;s/)$//' |
-    sort -u
-)
+for chapter_path in "${CHAPTER_PATHS[@]}"; do
+  while IFS= read -r asset; do
+    if [[ ! -f "$PROJECT_DIR/$asset" && ! -f "$(dirname "$chapter_path")/$asset" ]]; then
+      echo "Error: a chapter references a missing asset: $asset" >&2
+      exit 1
+    fi
+  done < <(
+    grep -Eo '!\[[^]]*\]\([^)]*\)' "$chapter_path" |
+      sed 's/^.*](//;s/)$//' |
+      sort -u
+  )
+done
+
+RESOURCE_PATH="$PROJECT_DIR:$PROJECT_DIR/tools/product-reference/chapters"
 
 mkdir -p "$OUTPUT_DIR"
 
@@ -80,6 +84,7 @@ CONTENTS_FILE="$TEMP_DIR/contents.md"
       text=$0
       sub(/^## /, "", text)
       gsub(/\*\*/, "", text)
+      sub(/[[:space:]]+\{\.section-page\}$/, "", text)
       sub(/[[:space:]]+$/, "", text)
       print "- [" text "]{.toc-entry}"
     }
@@ -87,6 +92,7 @@ CONTENTS_FILE="$TEMP_DIR/contents.md"
       text=$0
       sub(/^### /, "", text)
       gsub(/\*\*/, "", text)
+      sub(/[[:space:]]+\{\.section-page\}$/, "", text)
       sub(/[[:space:]]+$/, "", text)
       print "  - [" text "]{.toc-entry}"
     }
@@ -119,7 +125,7 @@ pandoc \
   --standalone \
   --metadata-file="$BOOK_FILE" \
   --reference-doc="$REFERENCE_DOC" \
-  --resource-path="$PROJECT_DIR" \
+  --resource-path="$RESOURCE_PATH" \
   "${DOCUMENT_INPUTS[@]}" \
   --output="$DOCX_FILE"
 
@@ -128,12 +134,12 @@ pandoc \
   --to=html5 \
   --standalone \
   --toc \
-  --toc-depth=2 \
+  --toc-depth=3 \
   --embed-resources \
   --metadata-file="$BOOK_FILE" \
   --template="$HTML_TEMPLATE" \
   --css="$HTML_STYLESHEET" \
-  --resource-path="$PROJECT_DIR" \
+  --resource-path="$RESOURCE_PATH" \
   "${CHAPTER_PATHS[@]}" \
   --output="$HTML_FILE"
 

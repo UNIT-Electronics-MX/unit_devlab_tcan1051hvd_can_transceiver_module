@@ -36,7 +36,7 @@ Enable the 120 Ω termination only when the module is
 installed at a physical end of the CAN bus.
 
 
-### **1.2 Board Identification**
+### **1.2 Board Identification** {.section-page}
 
 | Item | Value |
 |---|---|
@@ -56,29 +56,10 @@ installed at a physical end of the CAN bus.
 Board, schematic, pinout, and documentation revisions are
 controlled independently.
 
-### **1.3 Identified Assemblies**
-
-| Assembly | Function |
-|---|---|
-| TCAN1051HVD (IC1) | High-speed CAN physical-layer transceiver supporting Classic CAN and CAN FD data rates up to 2 Mbps |
-| TPS61023 (U1) | Boost converter generating the regulated 5 V rail from VIN |
-| AP2112K-3.3 (U2) | Linear regulator generating the 3.3 V rail from the 5 V supply |
-| PESD2CANFD24L-UX (D1) | Transient protection for CANH and CANL |
-| Green LED (D2) | Indicates the presence of the regulated 5 V supply |
-| Controller connector (J1) | 4-pin, 1 mm-pitch connection for VIN, GND, CTX, and CRX |
-| CAN bus terminal | 2-position, 3.81 mm screw terminal for CANH and CANL |
-| Split termination network (R2, R3, C5) | Provides 120 Ω CAN bus termination using two 60 Ω resistors and a 4.7 nF center capacitor |
-| Termination selector (JP1) | Controls the connection of the onboard termination network |
-| VIO selector (JP4) | Selects 3.3 V or 5 V transceiver logic levels |
-| Enable signal (EN) | Controls the TPS61023 boost converter |
-| Castellated contacts | Provide access to power, control, and CAN bus signals |
-
-The module implements the CAN physical layer only.
-A host microcontroller with an integrated CAN controller
-or an external CAN controller is required for communication.
 
 
-### **1.4 Board Views** {.section-page}
+
+### **1.3 Board Views** {.section-page}
 
 ![](hardware/resources/unit_topology_v_1_0_ue0085_TCAN1051HVD.png){width=5.2in}
 
@@ -106,14 +87,10 @@ signal references.
 | QR code | Board identification and product reference | Bottom |
 | GND, VIN, CTX, CRX | Controller interface signal markings | Bottom |
 
-The board topology illustration identifies component
-placement and interface locations. Electrical connections
-and component values are defined by the released schematic.
 
-Board artwork and schematic revisions must be verified
-independently before manufacturing or hardware modification.
 
-### **1.5 Handling** {.section-page}
+
+### **1.4 Handling** {.section-page}
 
 Use standard electrostatic discharge (ESD) precautions
 when handling or installing the module.

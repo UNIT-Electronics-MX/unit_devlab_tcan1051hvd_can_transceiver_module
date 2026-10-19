@@ -10,7 +10,7 @@ Use the released mechanical drawing or a physical sample when designing mating
 enclosures or production fixtures; the rendered image is not a 1:1 fabrication
 template.
 
-### 6.1 Board Views
+### **6.1 Board Views** {.section-page}
 
 | Top | Bottom |
 |---|---|
