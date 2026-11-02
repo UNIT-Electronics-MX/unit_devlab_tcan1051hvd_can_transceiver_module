@@ -17,11 +17,10 @@ The TCAN1051HVD CAN Transceiver Module is a compact physical-layer interface bet
 
 ### Quick Setup
 
-
-[<img src="https://img.shields.io/badge/Product%20Wiki-blue?style=for-the-badge" alt="Product Wiki" target="_blank">](https://unit-electronics-mx.github.io/unit_devlab_tcan1051hvd_can_transceiver_module/)
-[<img src="https://img.shields.io/badge/Datasheet-green?style=for-the-badge" alt="Datasheet" target="_blank">](./docs/hardware/unit_product_reference_v_1_0_0_ue0085_tcan1051hvd_can_transceiver_module.pdf)
-[<img src="https://img.shields.io/badge/Buy%20Now-orange?style=for-the-badge" alt="Buy Now" target="_blank">](https://uelectronics.com/)
-[<img src="https://img.shields.io/badge/Getting%20Started-purple?style=for-the-badge" alt="Getting Started" target="_blank">](./hardware/README.md)
+[<img src="https://img.shields.io/badge/Product%20Wiki-blue?style=for-the-badge" alt="Product Wiki">](https://unit-electronics-mx.github.io/unit_devlab_tcan1051hvd_can_transceiver_module/)
+[<img src="https://img.shields.io/badge/Datasheet-green?style=for-the-badge" alt="Datasheet">](docs/hardware/unit_product_reference_v_1_0_0_ue0085_tcan1051hvd_can_transceiver_module.pdf)
+<img src="https://img.shields.io/badge/Buy%20Now-pending-lightgrey?style=for-the-badge" alt="Buy Now pending">
+[<img src="https://img.shields.io/badge/Getting%20Started-purple?style=for-the-badge" alt="Getting Started">](software/README.md)
 
 </div>
 
@@ -64,7 +63,3 @@ The TCAN1051HVD CAN Transceiver Module is a compact physical-layer interface bet
 
 This product and its documentation are licensed under the MIT License.  
 See [`LICENSE`](LICENSE) for details.
-
-<div align="center">
-  <sub>Template created by UNIT Electronics</sub>
-</div>
