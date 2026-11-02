@@ -9,14 +9,6 @@ The TCAN1051HVD CAN Transceiver Module is a compact physical-layer interface bet
 > The ESP32-H2 and ESP32-P4 TWAI controllers used in the example support Classic CAN up to 1 Mbps, but not CAN FD frames. CAN FD operation requires a compatible CAN FD controller.
 
 <div align="center">
-  <a href="#"><img src="https://img.shields.io/badge/version-1.0.0-blue.svg" alt="Version"></a>
-  <a href="#"><img src="https://img.shields.io/badge/interface-Classic_CAN-lightgrey.svg" alt="Classic CAN"></a>
-  <a href="#"><img src="https://img.shields.io/badge/interface-CAN_FD-lightgrey.svg" alt="CAN FD"></a>
-  <a href="./LICENSE"><img src="https://img.shields.io/badge/license-MIT-green.svg" alt="License"></a>
-  <br>
-</div>
-
-<div align="center">
   <img src="./hardware/resources/unit_top_v_1_0_ue0085_TCAN1051HVD.png" width="450px" alt="Product Image">
   <p><em>TCAN1051HVD CAN Transceiver Module — UE0085</em></p>
 </div>
@@ -35,21 +27,22 @@ The TCAN1051HVD CAN Transceiver Module is a compact physical-layer interface bet
 
 ## Overview
 
-| Feature / Component              | Details                                                                                      |
-| -------------------------------- | -------------------------------------------------------------------------------------------- |
-| **Communication**                | Classic CAN physical layer; CAN FD data rate up to 2 Mbps with a compatible controller.       |
-| **Input Voltage**                | Module VIN range from 3.3 V to 5.0 V.                                                       |
-| **Logic Voltage**                | Selectable 3.3 V or 5 V controller-side logic through VIO.                                  |
-| **IC1 – TCAN1051HVD**            | High-speed, fault-protected CAN transceiver with separate VIO supply.                        |
-| **IC2 – AP2112K**                | Onboard 3.3 V regulator.                                                                     |
-| **IC3 – TPS61023**               | Onboard 5 V boost converter.                                                                 |
-| **D1 – CAN Protection**          | PESD2CANFD24L-UX protection device on CANH and CANL.                                         |
-| **D2 – Power LED**               | Onboard green power-status indicator.                                                        |
-| **J1 – Controller Port**         | 1 mm-pitch connector for GND, VIN, CTX, and CRX.                                             |
-| **J2 – CAN Bus Port**            | 3.81 mm screw terminal for CANH and CANL.                                                    |
-| **JP1 / JP2 / JP3**              | Castellated connections for bus, logic, power, and control signals.                          |
-| **JP4 / SB1 – VIO Selector**     | Solder selector for 3.3 V or 5 V controller logic.                                           |
-| **CAN Termination**              | Onboard 120 Ω CAN termination network.                                                       |
+| Feature | Description |
+|---|---|
+| MPN | UE0085 |
+| **Communication** | Classic CAN physical layer; CAN FD data rate up to 2 Mbps with a compatible controller. |
+| **Input Voltage** | Module VIN range from 3.3 V to 5.0 V. |
+| **Logic Voltage** | Selectable 3.3 V or 5 V controller-side logic through VIO. |
+| **IC1 – TCAN1051HVD** | High-speed, fault-protected CAN transceiver with separate VIO supply. |
+| **IC2 – AP2112K** | Onboard 3.3 V regulator. |
+| **IC3 – TPS61023** | Onboard 5 V boost converter. |
+| **D1 – CAN Protection** | PESD2CANFD24L-UX protection device on CANH and CANL. |
+| **D2 – Power LED** | Onboard green power-status indicator. |
+| **J1 – Controller Port** | 1 mm-pitch connector for GND, VIN, CTX, and CRX. |
+| **J2 – CAN Bus Port** | 3.81 mm screw terminal for CANH and CANL. |
+| **JP1 / JP2 / JP3** | Castellated connections for bus, logic, power, and control signals. |
+| **JP4 / SB1 – VIO Selector** | Solder selector for 3.3 V or 5 V controller logic. |
+| **CAN Termination** | Onboard 120 Ω CAN termination network. |
 
 
 
@@ -61,11 +54,17 @@ The TCAN1051HVD CAN Transceiver Module is a compact physical-layer interface bet
 - Automotive prototyping and diagnostics
 - CANopen, DeviceNet, NMEA 2000, ISOBUS, and other CAN-based networks
 
-## License
+## Resources
+
+- [Product Reference](docs/hardware/unit_product_reference_v_1_0_0_ue0085_tcan1051hvd_can_transceiver_module.pdf)
+- [Hardware files and pinout](hardware/README.md)
+- [Software examples](software/examples/README.md)
+
+## 📝 License
 
 This product and its documentation are licensed under the MIT License.  
 See [`LICENSE`](LICENSE) for details.
 
 <div align="center">
-  <sub>Template by UNIT Electronics • Customize this file for your product documentation.</sub>
+  <sub>Template created by UNIT Electronics</sub>
 </div>
