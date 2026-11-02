@@ -2,7 +2,11 @@
 
 ## Hardware Scope
 
-This page documents the **TCAN1051HVD CAN Transceiver Module** (MPN **UE0085**) using the published schematic, pinout, board views, and component information. Distinguish module-level recommendations from the TCAN1051HVD component ratings below.
+This page documents the **TCAN1051HVD CAN Transceiver Module** using the published schematic, pinout, board views, and component information. Distinguish module-level recommendations from the TCAN1051HVD component ratings below.
+
+| Field | Value |
+|---|---|
+| MPN | UE0085 |
 
 ## Power Tree
 
@@ -16,7 +20,6 @@ A separate functional block-diagram drawing is not included. See the [Topology](
 
 - Product name: **TCAN1051HVD CAN Transceiver Module**.
 - Product family: **UNIT DevLab ecosystem**.
-- MPN: **UE0085**.
 - Existing source files retain their published names and revisions.
 - Generated Product Reference: `unit_product_reference_v_1_0_0_ue0085_tcan1051hvd_can_transceiver_module.pdf`.
 
