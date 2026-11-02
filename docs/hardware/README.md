@@ -1,4 +1,27 @@
-# Hardware
+# TCAN1051HVD CAN Transceiver Module Hardware
+
+## Hardware Scope
+
+This page documents the **TCAN1051HVD CAN Transceiver Module** (MPN **UE0085**) using the published schematic, pinout, board views, and component information. Distinguish module-level recommendations from the TCAN1051HVD component ratings below.
+
+## Power Tree
+
+`VIN` supplies the board power section. The parts list identifies an AP2112K 3.3 V regulator and a TPS61023 5 V boost converter. The resulting rails are exposed as `3V3` and `5V`; use the [schematic](unit_schematic_v_1_0_ue0085_TCAN1051HVD.pdf) for the confirmed circuit connections. No separate power-tree drawing is provided.
+
+## Block Diagram
+
+A separate functional block-diagram drawing is not included. See the [Topology](#topology) drawing and schematic.
+
+## Naming Rules
+
+- Product name: **TCAN1051HVD CAN Transceiver Module**.
+- Product family: **UNIT DevLab ecosystem**.
+- MPN: **UE0085**.
+- Existing source files retain their published names and revisions.
+- Generated Product Reference: `unit_product_reference_v_1_0_0_ue0085_tcan1051hvd_can_transceiver_module.pdf`.
+
+## Hardware
+
 <div align="center">
 
 <a href="./unit_schematic_v_1_0_ue0085_TCAN1051HVD.pdf"><img src="./resources/unit_schematic_v_1_0_ue0085_TCAN1051HVD.png" width="900px" alt="UE0085 revision 1 schematic preview"><br/> Open the original schematic PDF</a>
@@ -7,9 +30,11 @@
 
 </div>
 
-## Technical Specifications
+![UE0085 top view](resources/unit_top_v_1_0_ue0085_TCAN1051HVD.png)
 
-<div align="center">
+![UE0085 bottom view](resources/unit_btm_v_1_0_ue0085_TCAN1051HVD.png)
+
+### Technical Specifications
 
 | **Parameter** |                    **Description**                     | **Min** |   **Typ**   | **Max** | **Unit** |
 |:-------------:|:------------------------------------------------------:|:-------:|:-----------:|:-------:|:--------:|
@@ -28,13 +53,9 @@
 |    CAN FD     |       Supported data rate for the HVD transceiver      |    -    |      -      |    2    |   Mbps   |
 |      TA*      |        TCAN1051HVD operating free-air temperature      |   -55   |      -      |   125   |    °C    |
 
-</div>
+**VIN** is a module-level recommendation. VCC, VIO, I/O current, CAN FD rate, and temperature are TCAN1051HVD specifications. The 1 Mbps limit in the ESP32-H2/P4 examples belongs to their TWAI controllers, not this transceiver. The assembled module has not been independently qualified over the complete IC temperature range.
 
-*VIN is a module-level recommendation. VCC, VIO, I/O current, CAN FD rate, and temperature are TCAN1051HVD specifications. The 1 Mbps limit in the ESP32-H2/P4 examples belongs to their TWAI controllers, not this transceiver. The assembled module has not been independently qualified over the complete IC temperature range.
-
-**The ±70 V CAN bus-fault value specified for the H-suffix transceiver is an absolute maximum IC stress rating. It must not be applied to VIN, CTX, CRX, EN, VIO, 3V3, or 5V.
-
-
+**The ±70 V CAN bus-fault value specified for the H-suffix transceiver is an absolute maximum IC stress rating. It must not be applied to VIN, CTX, CRX, EN, VIO, 3V3, or 5V.**
 
 ## Pinout
 
@@ -44,6 +65,8 @@
     <br/>
     <br/>
     
+
+</div>
 
 | Pin Label | Function     | Notes                                                   |
 |-----------|--------------|---------------------------------------------------------|
@@ -58,7 +81,13 @@
 | VIO       | Logic Supply | Selectable 3.3 V or 5 V transceiver I/O supply          |
 | EN        | Logic Input  | Boost-converter enable; LOW disables generated rails    |
 
-J1 carries GND, VIN, CTX, and CRX. J2 carries CANH and CANL. Set the VIO solder selector to match the host logic voltage before applying power, and never bridge the 3V3 and 5V sides simultaneously.
+## Dimensions
+
+<div align="center">
+
+<a href="./resources/unit_dimensions_v_1_0_ue0085_TCAN1051HVD.png"><img src="./resources/unit_dimensions_v_1_0_ue0085_TCAN1051HVD.png" width="500px" alt="UE0085 dimensions"><br/> Dimensions</a>
+
+Nominal board outline: **29.83 mm × 25.40 mm**. Mounting-hole diameter: **3 mm**.
 
 </div>
 
@@ -69,6 +98,8 @@ J1 carries GND, VIN, CTX, and CRX. J2 carries CANH and CANL. Set the VIO solder 
 <br/>
 <br/>
 <br/>
+
+</div>
 
 | Ref.       | Description                                      |
 |------------|--------------------------------------------------|
@@ -83,20 +114,27 @@ J1 carries GND, VIN, CTX, and CRX. J2 carries CANH and CANL. Set the VIO solder 
 | JP1/JP2/JP3| Castellated bus, logic, power, and control pads   |
 | JP4 / SB1  | 3.3 V / 5 V VIO solder selector                  |
 
-</div>
+## Pin & Connector Layout
 
-## Dimensions
+J1 carries GND, VIN, CTX, and CRX. J2 carries CANH and CANL. Set the VIO solder selector to match the host logic voltage before applying power, and never bridge the 3V3 and 5V sides simultaneously.
 
-<div align="center">
+J1 is a 1 mm-pitch controller/power connector, and J2 is a 3.81 mm CANH/CANL screw terminal. Castellated pads expose bus, logic, power, and control signals.
 
-<a href="./resources/unit_dimensions_v_1_0_ue0085_TCAN1051HVD.png"><img src="./resources/unit_dimensions_v_1_0_ue0085_TCAN1051HVD.png" width="500px" alt="UE0085 dimensions"><br/> Dimensions</a>
+## Functional Description
 
-Nominal board outline: **29.83 mm × 25.40 mm**. Mounting-hole diameter: **3 mm**.
+The TCAN1051HVD translates controller-side CTX/CRX logic into the differential CANH/CANL bus. `VIO` selects the host logic voltage, while the onboard regulator and boost converter supply the documented rails. The assembled module has not been independently qualified over the complete IC temperature range.
 
-</div>
+## Applications
 
-# References
+- Industrial automation and distributed control
+- Robotics and mobile platforms
+- Building and environmental control
+- Automotive prototyping and diagnostics
+- CANopen, DeviceNet, NMEA 2000, ISOBUS, and other CAN-based networks
+
+## References
 
 - <a href="../docs/hardware/unit_product_reference_v_1_0_0_ue0085_tcan1051hvd_can_transceiver_module.pdf">UE0085 Product Reference Manual</a>
 - <a href="./resources/datasheet/tcan1051hv.pdf">Local TCAN1051HV Datasheet</a>
 - <a href="https://www.ti.com/lit/ds/symlink/tcan1051hv.pdf">TCAN1051HV Datasheet</a>
+- [Product repository](https://github.com/UNIT-Electronics-MX/unit_devlab_tcan1051hvd_can_transceiver_module)
